@@ -1,0 +1,68 @@
+\documentclass[class=minimal,border=1pt]{standalone}
+
+
+
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usetikzlibrary{calc,spy}
+\usepgfplotslibrary{units}
+\pgfplotsset{width=.5\textwidth,compat=newest}
+\usetikzlibrary{arrows,shapes,positioning}
+\usetikzlibrary{decorations.markings}
+\usetikzlibrary{decorations.pathreplacing}
+\usetikzlibrary{decorations.pathmorphing}
+\tikzstyle directed=[postaction={decorate,decoration={markings,mark=at position .5 with {\arrow{stealth}}}}]
+\tikzset{%
+  cross/.style={path picture={ 
+      \draw[black]
+      (path picture bounding box.south east) -- (path picture bounding box.north west) 
+      (path picture bounding box.south west) -- (path picture bounding box.north east);
+}}}
+\tikzset{boson/.style={decorate,decoration={snake}},
+  % style to apply some styles to each segment of a path
+  on each segment/.style={
+    decorate,
+    decoration={
+      show path construction,
+      moveto code={},
+      lineto code={
+        \path [#1]
+        (\tikzinputsegmentfirst) -- (\tikzinputsegmentlast);
+      },
+      curveto code={
+        \path [#1] (\tikzinputsegmentfirst)
+        .. controls
+        (\tikzinputsegmentsupporta) and (\tikzinputsegmentsupportb)
+        ..
+        (\tikzinputsegmentlast);
+      },
+      closepath code={
+        \path [#1]
+        (\tikzinputsegmentfirst) -- (\tikzinputsegmentlast);
+      },
+    },
+  },
+  % style to add an arrow in the middle of a path
+  mid arrow/.style={postaction={decorate,decoration={
+        markings,
+        mark=at position .5 with {\arrow[#1]{stealth}}
+  }}},
+}
+%%%fermion
+\tikzstyle fermion=[draw,postaction={on each segment={mid arrow}}]
+
+
+
+
+
+
+\begin{document}
+
+\begin{tikzpicture}[thick,baseline=(current  bounding  box.center)]
+  \coordinate (V) at (0,0);
+  %\node[circle,draw=black,shade,minimum size=.6cm]  at (V)  {};
+  \draw[dashed] (-2.5,0) node[anchor=south] {$H(k)$} -- (180:1cm);
+  \path[fermion] (2,1) node[anchor=west] {$\bar{\ell}(p)$}  -- (5:1cm) arc (5:355:1cm) -- (2,-1) node[anchor=west] {$\ell(p')$};
+\end{tikzpicture}
+
+\end{document}
