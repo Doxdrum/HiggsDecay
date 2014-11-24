@@ -62,7 +62,8 @@
   \coordinate (V) at (0,0);
   %\node[circle,draw=black,shade,minimum size=.6cm]  at (V)  {};
   \draw[dashed] (-2.5,0) node[anchor=south] {$H(k)$} -- (180:1cm);
-  \path[fermion] (2,1) node[anchor=west] {$\bar{\ell}(p)$}  -- (5:1cm) arc (5:355:1cm) -- (2,-1) node[anchor=west] {$\ell(p')$};
+  \path[fermion] (0,0) circle (1cm);
+  \path[fermion] (2,1) node[anchor=west] {$\bar{\ell}(p)$}  -- (1.1cm, 0) -- (2,-1) node[anchor=west] {$\ell(p')$};
 \end{tikzpicture}
 
 \end{document}
