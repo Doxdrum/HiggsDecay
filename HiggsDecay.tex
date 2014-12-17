@@ -1,4 +1,5 @@
-\documentclass[twocolumn,aps,showpacs,showkeys,prd,superscriptaddress,byrevtex]{revtex4-1}
+\documentclass[twocolumn,aps,prd,showkeys,showpacs,groupedaddress,byrevtex]{revtex4-1}
+
 
 \usepackage{amsmath,amsthm,latexsym,amssymb,amsfonts,epsfig}
 \usepackage{xcolor}
@@ -39,6 +40,7 @@
 \title{Precision measurements constraints to $H \to \ell \bar{\ell}$ from gravitational torsion}
 
 \author{Oscar \surname{Castillo-Felisola}}
+\author{Basti\'an \surname{D\'iaz}}
 \author{Felipe \surname{Rojas}}
 \author{Jilberto \surname{Zamora}}
 \author{Alfonso R. \surname{Zerwekh}}
@@ -60,11 +62,33 @@
 
 \maketitle
 
-With the discovery of a bosonic resonance with mass of approximately \SI{125}{\GeV} at the LHC~\cite{Aad:2012tfa,Chatrchyan:2012ufa}, the analysis of its decay is mandatory for establishing whether this resonance is the missing element of the standard model (SM), the Higgs boson.
+\section{\label{intro}Introduction}
 
-The purpose of this paper is to analyse the variation of the decay width of the Higgs boson into a lepton pair, by the inclusion of a contact four-fermion interaction induced by the presence of gravitational torsion.
+With the discovery of a bosonic resonance with mass of  \SI{125.6}{\GeV} at the LHC~\cite{Aaltonen:2012qt,Aad:2012tfa,Chatrchyan:2012ufa}, a thorough  analysis of its decay is mandatory for establishing the quantum numbers whether this resonance is the missing element of the standard model (SM) of particle physics, the Higgs boson. Although the SM has proven to be a very successful theory, it can be argue that it is not a complete fundamental model in the sense that no gravitational interaction is considered.
+
+Moreover, it seems that Einstein's theory of gravity, known as General Relativity (GR), is a low energy effective theory of a more fundamental one due to the lack of a mechanism of quantize the theory~\footnote{There are several attempts of quantize the gravitational interactions, see for example Refs.~\cite{Ashtekar:1986yd,*Ashtekar:1987gu,*Ashtekar:2004eh,DeWitt:1967yk,*DeWitt:1967ub,*DeWitt:1967uc} (for a historical review see Ref.~\cite{Rovelli:2000aw}).}. In an effort to obtain a more fundamental theory of gravity, several generalizations of GR have been proposed. From these theories, the minimal generalization was proposed by Cartan dates back to the 20's~\cite{Cartan-Einstein,Cartan1922,*Cartan1923,*Cartan1924,*Cartan1925}, and it is known as Einstein--Cartan theory of gravity (ECT). The main difference between GR and ECT is that the latter does not assume the gravitational connection to be the one of Levi-Civita, and therefore there is an extra component of the connection known as (gravitational) torsion. It is worth to mention that in this minimal frame, the gravitational torsion turns to be a non-dynamical field and can be integrated out of the system~\footnote{Interestingly, for pure gravity the equation of motion for the torsion yields the vanishing torsion condition.}.
+
+When the ECT of gravity is coupled with fermionic matter, despite the fact that torsion can still be integrated out, its integration produces a four-fermion contact interaction~\cite{Kibble:1961ba,RevModPhys.48.393,Shapiro:2001rz,SUGRA-book,Castillo-Felisola:2013jva}. In four dimensions the effective four-fermion interaction term has a coupling constant proportional to Newton's gravitational constant, $G_N\sim M_{\text{pl}}^{-2}$, which heavily suppresses the possible phenomenology coming from this term~\footnote{As remarked by L. Fabbri, the most general torsional generalization of Einstein gravity, the effective four-fermion interaction term has a coupling constant proportional to a yet undetermined constant~\cite{Fabbri:2011kq}.}. However, in the last decades scenarios with extra dimensions have been proposed as a way to achieve naturalness between the electroweak and the (fundamental) gravitational scales, $M_*$, while the known Planck's mass, $M_{\text{pl}}$, is an enhanced effective gravitational scale~\cite{ADD1,*AADD,*ADD2,RS1,*RS2}.
+
+The purpose of this paper is to analyze the variation of the decay width of the Higgs boson into a lepton pair, by the inclusion of a contact four-fermion interaction induced by the presence of gravitational torsion, and analyze the constraints to our model imposed by the current results in the LHC experiments. To this end, a brief review of the setup is presented in Sec.~\ref{CEG}. Then, in Sec.~\ref{1loop} we show the one-loop corrections to the Higgs decay into a lepton pair, due to the effective four-fermion interaction. Finally, in Sec.~\ref{phenom} we analyze the phenomenological constraints to the parameter of our model imposed by the experimental data, and we compare how this restrictions vary with the number of extra dimensions.
 
 
+\section{\label{CEG}Effective interaction through gravitational torsion}
+
+The standard formalism used in the GR, where the physical field is the metric, is know as second order formalism --- due to the fact that the equations of motion are of second order ---. However, in this section we shall deal with the first order formalism~\footnote{Additionally, we make extensive use of the formalism of differential forms~\cite{Cartan-calc,*Zanelli:2005sa}.}, which accomplish the same task but splits the physical objects into two types fields known as vielbeins \mbox{($\vif{a} = \vi{a}{\mu}\de{x}^\mu$)} and spin connection \mbox{($\spif{ab}{} = \spi{\mu}{}^{ab}\de{x}^\mu$).} We shall use the notation in Ref.~\cite{Castillo-Felisola:2013jva,*Castillo-Felisola:2014iia,*Castillo-Felisola:2014xba}, where hatted quantities refers to higher dimensional objects and/or indices, and $\ga^{*}$ is the four-dimensional chiral matrix.
+
+We start from the action which includes the ECT of gravity and Dirac fields interacting with the gravitational field,
+\begin{equation}
+  \begin{split}
+    S &= \frac{1}{2\kappa^2}\int\frac{\epsilon_{\hat{a}_1\cdots \hat{a}_D}}{(D-2)!}\hRif{\hat{a}_1 \hat{a}_2}{} \we \hvif{\hat{a}_3} \we \cdots \we \hvif{\hat{a}_D} \\
+    & \quad - \int \frac{\epsilon_{\hat{a}_1\cdots \hat{a}_D}}{(D-1)!} \Bps \hvif{\hat{a}_1} \we \cdots \we \hvif{\hat{a}_{D-1}}\ga^{\hat{a}_D} \hat{\cdf} \, \Psi \\
+    & \quad - m \int\frac{\epsilon_{\hat{a}_1\cdots \hat{a}_D}}{D!} \Bps \hvif{\hat{a}_1} \we \cdots \we \hvif{\hat{a}_{D}} \Psi,
+  \end{split}
+\end{equation}
+
+
+\section{\label{1loop}One-loop calculation of $H \to \ell \bar{\ell}$}
+  
 
 \begin{figure}[ht]
   \includegraphics{Pics/s-channel.pdf}
@@ -77,7 +101,11 @@ The purpose of this paper is to analyse the variation of the decay width of the 
 \end{figure}
 
 
-\nocite{GonzalezGarcia:1998ay,Castillo-Felisola:2014xba,Cartan1922,Cartan1923,Cartan1924,Cartan1925}
+\section{\label{phenom}Phenomenological implications}
+
+
+
+\nocite{GonzalezGarcia:1998ay}%,Cartan1922,Cartan1923,Cartan1924,Cartan1925}
 
 \bibliographystyle{apsrev4-1}
 \bibliography{References.bib}
