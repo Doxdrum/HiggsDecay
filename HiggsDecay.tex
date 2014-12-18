@@ -1,7 +1,7 @@
 \documentclass[twocolumn,aps,prd,showkeys,showpacs,groupedaddress,byrevtex]{revtex4-1}
 
 
-\usepackage{amsmath,amsthm,latexsym,amssymb,amsfonts,epsfig}
+\usepackage{amsmath,amsthm,latexsym,amssymb,amsfonts}
 \usepackage{xcolor}
 \usepackage{ulem}
 %\usepackage{authblk}
@@ -84,7 +84,16 @@ We start from the action which includes the ECT of gravity and Dirac fields inte
     & \quad - \int \frac{\epsilon_{\hat{a}_1\cdots \hat{a}_D}}{(D-1)!} \Bps \hvif{\hat{a}_1} \we \cdots \we \hvif{\hat{a}_{D-1}}\ga^{\hat{a}_D} \hat{\cdf} \, \Psi \\
     & \quad - m \int\frac{\epsilon_{\hat{a}_1\cdots \hat{a}_D}}{D!} \Bps \hvif{\hat{a}_1} \we \cdots \we \hvif{\hat{a}_{D}} \Psi,
   \end{split}
+  \label{action}
 \end{equation}
+where $\hat{\cdf}$ is the spinorial covariant derivative in a curved spacetime. The equation of motion for the spin connection in Eq.~\eqref{action} is
+\begin{equation}
+  \frac{1}{2}\(\hat{\tor}_{\hat{b} \hat{c} \hat{a} } + \hat{\tor}_{\hat{b} \hat{a} \hat{c} } + \hat{\tor}_{\hat{a} \hat{b} \hat{c} }\) = -\frac{\kappa^2}{4} \bar{\Psi}\ga_{\hat{a} \hat{b} \hat{c}}\Psi,
+  \label{tor-eom}
+\end{equation}
+where the torsional construction in the LHS is known as the contorsion, $\hcont{\hat{a} \hat{b} \hat{c} }{}{}$, and additionally from the RHS the only not trivial contribution of the contorsion is the totally antisymmetric part. Moreover, the \hl{explain relation between spin connection and contorsion}.
+
+Since the  Eq.~\eqref{tor-eom} is algebraic, it can be substituted back into the original action. This i
 
 
 \section{\label{1loop}One-loop calculation of $H \to \ell \bar{\ell}$}
