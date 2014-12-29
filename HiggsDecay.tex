@@ -108,8 +108,8 @@ If we restrict ourselves to consider a single extra dimension, using the Cliffor
 \begin{equation}
   \begin{split}
     \Lag_{\text{eff}}
-    & = 6 \( \bar{\Psi} \ga_{a}\ga^* \Psi \) \( \bar{\Psi} \ga^{a}\ga^* \Psi \) \\
-    & \quad + 3 \( \bar{\Psi} \ga_{a b}\ga^* \Psi \) \( \bar{\Psi} \ga^{a b}\ga^* \Psi \).
+    & = \frac{3 \kappa_*^2}{16} \( \bar{\Psi} \ga_{a}\ga^* \Psi \) \( \bar{\Psi} \ga^{a}\ga^* \Psi \) \\
+    & \quad + \frac{3 \kappa_*^2}{32} \( \bar{\Psi} \ga_{a b}\ga^* \Psi \) \( \bar{\Psi} \ga^{a b}\ga^* \Psi \).
   \end{split}
   \label{Eff4fi}
 \end{equation}
@@ -118,29 +118,43 @@ If we restrict ourselves to consider a single extra dimension, using the Cliffor
 
 \section{\label{1loop}One-loop calculation of $H \to \ell \bar{\ell}$}
 
-In this section we shall consider the contribution of the effective four-fermion interaction in Eq.~\eqref{Eff4fi}, to the decay of the Higgs boson into a lepton pair, which is a one-loop process. To this end, we split the effective interaction into a current--current interaction (inspired in Ref.~\cite{GonzalezGarcia:1998ay})
+In this section we shall consider the contribution of the effective four-fermion interaction in Eq.~\eqref{Eff4fi}, to the decay of the Higgs boson into a lepton pair, which is a one-loop process. To this end, we split the effective interaction into a current--current interaction (inspired by Ref.~\cite{GonzalezGarcia:1998ay})
 \begin{equation}
-  \Lag_{\text{eff}} = 6 \( J_{a}^* \) \( J^{a*} \) + 3 \( J_{ab}^* \) \( J^{ab*} \).
+  \Lag_{\text{eff}} = \frac{3 \kappa_*^2}{16} \( J_{a}^* \) \( J^{a*} \) + \frac{3 \kappa_*^2}{32} \( J_{ab}^* \) \( J^{ab*} \),
   \label{new4fi}
 \end{equation}
-  
+which generate two different contributions to the $H \to \ell \bar{\ell}$ process, which will be called \emph{s-channel} (see Fig.~\ref{fig:s}) and \emph{t-channel} (see Fig.~\ref{fig:t}) respectively.
 
 \begin{figure}[ht]
   \includegraphics{Pics/s-channel.pdf}
-  \caption{Higgs to lepton pair through the four-fermion \mbox{``s-channel''.}}  
+  \caption{Higgs to lepton pair through the four-fermion \mbox{``s-channel''.}}
+  \label{fig:s}
 \end{figure}
 
 \begin{figure}[ht]
   \includegraphics{Pics/t-channel.pdf}
-  \caption{Higgs to lepton pair through the four-fermion \mbox{``t-channel''.}}  
+  \caption{Higgs to lepton pair through the four-fermion \mbox{``t-channel''.}}
+  \label{fig:t}
 \end{figure}
+
+A (psudo)scalar field decays into a lepton pair through a current of the form
+\begin{equation}
+  J^\mu = \bar{u}_\ell(\vec{p}) \( S + \imath P \ga^* \) v_\ell(\vec{p}'),
+  \label{Scur}
+\end{equation}
+where $S$ and $P$ are the scalar and pseudo-scalar form factors, and $\ga^*$ is the chiral matrix in four dimensions. Accordingly to the current in Eq.~\eqref{Scur}, the width decay of a (pseudo)scalar particle into a fermion pair is given by 
+\begin{equation}
+  \Gamma(H \to \ell \bar{\ell}) = \frac{g^2}{32} \frac{M_H m_\ell^2}{M_W^2}  \sqrt{1 - \frac{4 m_\ell^2}{M_H^2} }  S^2 \( 1 + \frac{P^2}{S^2} - \frac{4 m_\ell^2}{M_H^2} \).
+\end{equation}
+
+
 
 
 \section{\label{phenom}Phenomenological implications}
 
 
 
-\nocite{GonzalezGarcia:1998ay}%,Cartan1922,Cartan1923,Cartan1924,Cartan1925}
+%% \nocite{GonzalezGarcia:1998ay}%,Cartan1922,Cartan1923,Cartan1924,Cartan1925}
 
 \bibliographystyle{apsrev4-1}
 \bibliography{References.bib}
