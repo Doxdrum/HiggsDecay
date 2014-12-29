@@ -1,10 +1,10 @@
-\documentclass[twocolumn,aps,prd,showkeys,showpacs,groupedaddress,byrevtex]{revtex4-1}
+\documentclass[twocolumn,aps,prd,showkeys,showpacs,groupedaddress]{revtex4-1}
 
 
-\usepackage{amsmath,amsthm,latexsym,amssymb,amsfonts}
+\usepackage{amsmath,amsthm,amssymb,amsfonts}
 \usepackage{xcolor}
-\usepackage{ulem}
-%\usepackage{authblk}
+%% \usepackage{ulem}
+%% \usepackage{authblk}
 \usepackage[%
   colorlinks=true,
   urlcolor=blue,
@@ -12,11 +12,11 @@
   citecolor=blue
 ]{hyperref}
 \usepackage{etoolbox}
-\usepackage{breqn}
+%% \usepackage{breqn}
 
-\makeatletter
-\let\cat@comma@active\@empty
-\makeatother
+%% \makeatletter
+%% \let\cat@comma@active\@empty
+%% \makeatother
 
 
 \input{Def-article.tex}
@@ -48,8 +48,8 @@
 
 
 
-\affiliation{\UTFSM}
-\affiliation{\CCTVal}
+\affiliation{\UTFSM,}
+\affiliation{\CCTVal.}
 
 %--------- Abstract
 \begin{abstract}
@@ -64,7 +64,9 @@
 
 \section{\label{intro}Introduction}
 
-With the discovery of a bosonic resonance with mass of  \SI{125.6}{\GeV} at the LHC~\cite{Aaltonen:2012qt,Aad:2012tfa,Chatrchyan:2012ufa}, a thorough  analysis of its decay is mandatory for establishing the quantum numbers whether this resonance is the missing element of the standard model (SM) of particle physics, the Higgs boson. Although the SM has proven to be a very successful theory, it can be argue that it is not a complete fundamental model in the sense that no gravitational interaction is considered.
+With the discovery of a bosonic resonance with mass of  \SI{125.6}{\GeV} at the LHC~\cite{Aaltonen:2012qt,Aad:2012tfa,Chatrchyan:2012ufa}, a thorough  analysis of its decay is mandatory for establishing the quantum numbers whether this resonance is the missing element of the standard model (SM) of particle physics, the Higgs boson. The current data suggest that the resonance resembles the Higgs boson, but still there is a change of finding new physics effects through the decay channels. Customarily, the effective theories are modelled via ``contact'' four-fermion interactions, which complement the usual SM physics.
+
+Although the SM has proven to be a very successful theory, it can be argue that it is not  complete as a fundamental model in the sense that no gravitational interaction is considered.
 
 Moreover, it seems that Einstein's theory of gravity, known as General Relativity (GR), is a low energy effective theory of a more fundamental one due to the lack of a mechanism of quantize the theory~\footnote{There are several attempts of quantize the gravitational interactions, see for example Refs.~\cite{Ashtekar:1986yd,*Ashtekar:1987gu,*Ashtekar:2004eh,DeWitt:1967yk,*DeWitt:1967ub,*DeWitt:1967uc} (for a historical review see Ref.~\cite{Rovelli:2000aw}).}. In an effort to obtain a more fundamental theory of gravity, several generalizations of GR have been proposed. From these theories, the minimal generalization was proposed by Cartan dates back to the 20's~\cite{Cartan-Einstein,Cartan1922,*Cartan1923,*Cartan1924,*Cartan1925}, and it is known as Einstein--Cartan theory of gravity (ECT). The main difference between GR and ECT is that the latter does not assume the gravitational connection to be the one of Levi-Civita, and therefore there is an extra component of the connection known as (gravitational) torsion. It is worth to mention that in this minimal frame, the gravitational torsion turns to be a non-dynamical field and can be integrated out of the system~\footnote{Interestingly, for pure gravity the equation of motion for the torsion yields the vanishing torsion condition.}.
 
@@ -75,7 +77,7 @@ The purpose of this paper is to analyze the variation of the decay width of the 
 
 \section{\label{CEG}Effective interaction through gravitational torsion}
 
-The standard formalism used in the GR, where the physical field is the metric, is know as second order formalism --- due to the fact that the equations of motion are of second order ---. However, in this section we shall deal with the first order formalism~\footnote{Additionally, we make extensive use of the formalism of differential forms~\cite{Cartan-calc,*Zanelli:2005sa}.}, which accomplish the same task but splits the physical objects into two types fields known as vielbeins \mbox{($\vif{a} = \vi{a}{\mu}\de{x}^\mu$)} and spin connection \mbox{($\spif{ab}{} = \spi{\mu}{}^{ab}\de{x}^\mu$).} We shall use the notation in Ref.~\cite{Castillo-Felisola:2013jva,*Castillo-Felisola:2014iia,*Castillo-Felisola:2014xba}, where hatted quantities refers to higher dimensional objects and/or indices, and $\ga^{*}$ is the four-dimensional chiral matrix.
+The standard formalism used in the GR, where the physical field is the metric, is know as second order formalism --- due to the fact that the equations of motion are of second order ---. However, in this section we shall deal with the first order formalism~\footnote{Additionally, we make extensive use of the formalism of differential forms~\cite{Cartan-calc,*Zanelli:2005sa}.}, which accomplish the same task but splits the physical objects into two types fields known as vielbeins \mbox{($\vif{a} = \vi{a}{\mu}\de{x}^\mu$)} and spin connection \mbox{($\spif{ab}{} = \spi{\mu}{}^{ab}\de{x}^\mu$).} We shall use the notation in Ref.~\cite{Castillo-Felisola:2013jva,Castillo-Felisola:2014iia,*Castillo-Felisola:2014xba}, where hatted quantities refers to higher dimensional objects and/or indices, and $\ga^{*}$ is the four-dimensional chiral matrix.
 
 We start from the action which includes the ECT of gravity and Dirac fields interacting with the gravitational field,
 \begin{equation}
@@ -91,12 +93,36 @@ where $\hat{\cdf}$ is the spinorial covariant derivative in a curved spacetime. 
   \frac{1}{2}\(\hat{\tor}_{\hat{b} \hat{c} \hat{a} } + \hat{\tor}_{\hat{b} \hat{a} \hat{c} } + \hat{\tor}_{\hat{a} \hat{b} \hat{c} }\) = -\frac{\kappa^2}{4} \bar{\Psi}\ga_{\hat{a} \hat{b} \hat{c}}\Psi,
   \label{tor-eom}
 \end{equation}
-where the torsional construction in the LHS is known as the contorsion, $\hcont{\hat{a} \hat{b} \hat{c} }{}{}$, and additionally from the RHS the only not trivial contribution of the contorsion is the totally antisymmetric part. Moreover, the \hl{explain relation between spin connection and contorsion}.
+where the torsional construction in the LHS is known as the contorsion, $\hcont{\hat{a} \hat{b} \hat{c} }{}{}$, and additionally from the RHS the only not trivial contribution of the contorsion is the totally antisymmetric part. Moreover, the contorsion appears as a tensor which relates the ``affine'' spin connection ($\SPIF{a}{b}$) with the torsion free one ($\hat{\overline{\boldsymbol{\omega}}}^{\hat{a}}{}_{\hat{b}}$), i.e., \mbox{$\SPIF{a}{b} = \hat{\overline{\boldsymbol{\omega}}}^{\hat{a}}{}_{\hat{b}}+\CONTF{a}{b}.$}  %%\hl{explain relation between spin connection and contorsion}.
 
-Since the  Eq.~\eqref{tor-eom} is algebraic, it can be substituted back into the original action. This i
+Since the  Eq.~\eqref{tor-eom} is algebraic, it can be substituted back into the original action. The new action, expressed in terms of torsion-free quantities includes GR coupled with Dirac fields, plus an  induced four-fermion contact interaction of the form
+\begin{equation}
+  \Lag_{\text{4FI}} = \frac{\kappa^2}{32} \( \bar{\Psi}\ga_{\hat{a} \hat{b} \hat{c}}\Psi \)  \( \bar{\Psi}\ga^{\hat{a} \hat{b} \hat{c}}\Psi \),
+  \label{Lag4FI}
+\end{equation}
+which is suppressed by the Planck mass as anticipated. Since the value of the Planck mass is several orders of magnitude higher than any order scale in the SM of particle physics, this effective interaction is negligible for any phenomenological effect.
+
+Nevertheless, in the last decades some higher dimensional scenarios have been proposed such that there is a fundamental scale of gravity ($M_*$) which is enhanced in the four-dimensional effective theory up to the Planck mass~\cite{ADD1,*AADD,*ADD2,RS1,*RS2}. In these scenarios, the gravitational scale can be so low as a few \si{\TeV}, providing a solution to the huge difference between the SM scale and gravitational scale, known as the hierarchy problem. Additionally, the change in the gravitational scale have repercussions in the suppression of the four-fermion interaction, because $\kappa$ in Eq.~\eqref{Lag4FI} is replaced by $\kappa_*$.
+
+If we restrict ourselves to consider a single extra dimension, using the Clifford algebra decomposition from five dimensions to down to four, the interaction in Eq.~\eqref{Lag4FI} give rise to axial--axial and tensor-axial--tensor-axial interactions~\cite{Castillo-Felisola:2013jva}
+\begin{equation}
+  \begin{split}
+    \Lag_{\text{eff}}
+    & = 6 \( \bar{\Psi} \ga_{a}\ga^* \Psi \) \( \bar{\Psi} \ga^{a}\ga^* \Psi \) \\
+    & \quad + 3 \( \bar{\Psi} \ga_{a b}\ga^* \Psi \) \( \bar{\Psi} \ga^{a b}\ga^* \Psi \).
+  \end{split}
+  \label{Eff4fi}
+\end{equation}
+%% Additionally, the fermionic fields must be decomposed in terms of four-dimensional ones, which are chiral (see Ref.~\cite{Castillo-Felisola:2013jva}).
 
 
 \section{\label{1loop}One-loop calculation of $H \to \ell \bar{\ell}$}
+
+In this section we shall consider the contribution of the effective four-fermion interaction in Eq.~\eqref{Eff4fi}, to the decay of the Higgs boson into a lepton pair, which is a one-loop process. To this end, we split the effective interaction into a current--current interaction (inspired in Ref.~\cite{GonzalezGarcia:1998ay})
+\begin{equation}
+  \Lag_{\text{eff}} = 6 \( J_{a}^* \) \( J^{a*} \) + 3 \( J_{ab}^* \) \( J^{ab*} \).
+  \label{new4fi}
+\end{equation}
   
 
 \begin{figure}[ht]
