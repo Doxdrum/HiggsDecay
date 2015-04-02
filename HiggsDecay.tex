@@ -1,8 +1,276 @@
-\documentclass[twocolumn,aps,prd,showkeys,showpacs,groupedaddress]{revtex4-1}
+\documentclass{ws-mpla}
 
-
-\usepackage{amsmath,amsthm,amssymb,amsfonts}
+\usepackage{mathtools,amsmath,amssymb,amsfonts,dsfont,mathrsfs}
+\usepackage{graphicx}
+\usepackage{centernot}
 \usepackage{xcolor}
+\usepackage{comment}
+\usepackage{feynmf}
+\usepackage{siunitx}
+\usepackage{array}
+\usepackage{braket}
+\usepackage{xparse}
+
+%-------------------------------Theorems
+\newtheorem{Def}{Definition}[section]
+\newtheorem{Thm}[Def]{Theorem}
+\newtheorem{Lem}[Def]{Lemma}
+\newtheorem{Pos}[Def]{Postulate}
+\newtheorem{Exa}[Def]{Example}
+\newtheorem{Cor}[Def]{Corrolary}
+\newtheorem{Pro}[Def]{Proposition}
+
+%---------------------------------New commands
+\newcommand{\A}{\mathcal{A}} %% This is equivalent to \Ag (no args)
+\newcommand{\abs}[1]{\left|{#1}\right|}
+\DeclareMathOperator{\ad}{ad}
+\DeclareMathOperator{\Ad}{Ad}
+\DeclareDocumentCommand{\Ag}{ s o }{ \IfBooleanTF{#1}
+    { \IfValueTF{#2}{ \boldsymbol{\mathcal{A}}_{(#2)} }{ \boldsymbol{\mathcal{A}} } }
+    { \IfValueTF{#2}{            {\mathcal{A}}_{(#2)} }{            {\mathcal{A}} } } }
+%% \newcommand{\Ag}{\mathcal{A}_{(1)}}
+%% \newcommand{\Agf}{\boldsymbol{\mathcal{A}}}
+\DeclareDocumentCommand{\Af}{ s o }{ \IfBooleanTF{#1}
+    { \IfValueTF{#2}{ \boldsymbol{A}_{(#2)} }{ \boldsymbol{A} } }
+    { \IfValueTF{#2}{            {A}_{(#2)} }{            {A} } } }
+%% \newcommand{\Af}{ {\mathbf{A}} }
+%% \newcommand{\AF}[1]{ {\mathbf{A}}_{({#1})} }
+\newcommand{\hAf}{ \hat{\mathbf{A}}_{(1)} }
+\newcommand{\hAF}[1]{ \hat{\mathbf{A}}_{(#1)} }
+\newcommand{\bboxed}[1]{{\color{red}{\boxed{\boxed{\textcolor{black}{#1}}}}}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Cl}{\mathcal{C}\!\ell}
+\newcommand{\cdf}[1][]{{\boldsymbol{\mathcal{D}}}{#1}\!}
+\newcommand{\covd}{\mathcal{D}}
+\newcommand{\D}{\mathscr{D}}
+\newcommand{\df}[1][]{\mathbf{d}{#1}}
+\newcommand{\dfd}{{\mathbf{d}}^\dag\!}
+\newcommand\ded{\mathrm{d}^\dag}
+\DeclareMathOperator{\End}{End}
+\newcommand{\ele}[2][]{\frac{d}{dt}\left(\frac{\partial\mathcal{L}}{\partial \dot{#2}^{#1}}\right) - \frac{\partial\mathcal{L}}{\partial {#2}^{#1}}}
+\newcommand{\fele}[2][]{\partial_\mu \left(\frac{\delta\mathcal{L}}{\delta\left(\partial_\mu{#2}^{#1}\right)}\right) - \frac{\delta\mathcal{L}}{\delta {#2}^{#1}}}
+\newcommand{\vb}[1]{\vec{e}_{#1}}
+%% \newcommand{\fb}[1]{\widetilde{e}{}^{ #1}}
+\newcommand{\fb}[1]{\widetilde{e}{}^{ #1}}
+\newcommand\fder[3][]{\frac{\delta^{#1}{#2}}{\delta {#3}^{#1}}}
+\newcommand\fdern[4][]{\frac{\delta^{#1}{#2}}{\delta {#3} \cdots \delta {#4}}}
+%% \newcommand{\Fc}{\mathcal{F}}
+%% \newcommand{\F}{\boldsymbol{\mathcal{F}}}
+%% \newcommand{\Fg}{\boldsymbol{\mathcal{F}}_{(2)}}
+\DeclareDocumentCommand{\Fg}{ s o }{ \IfBooleanTF{#1}
+    { \IfValueTF{#2}{ \boldsymbol{\mathcal{F}}_{(#2)} }{ \boldsymbol{\mathcal{F}} } }
+    { \IfValueTF{#2}{            {\mathcal{F}}_{(#2)} }{            {\mathcal{F}} } } }
+%% \newcommand{\Ff}{{\mathbf{F}}}
+\DeclareDocumentCommand{\Ff}{ o }{ \IfValueTF{#1}{ F_{(#1)} }{ F } }
+\newcommand{\FF}[1]{{\mathbf{F}}_{(#1)}}
+\newcommand{\hFF}[1]{{\mathbf{\hat{F}}}_{(#1)}}
+\newcommand{\fy}{\centernot}
+\newcommand{\G}{\mathscr{G}}
+\newcommand{\ga}{\gamma}
+\newcommand{\gf}{\boldsymbol{\gamma}}
+\newcommand{\Ga}{\Gamma}
+\newcommand{\conn}[3]{\left(\Gamma_{#1}\right)^{#2}{}_{#3}}
+\newcommand{\connn}[3]{\Gamma_{#1}{}^{#2}{}_{#3}}
+\newcommand{\hcon}[3]{\hat{\Gamma}_{#1}{}^{#2}{}_{#3}}
+\newcommand{\Ha}{\mathscr{H}}
+\newcommand{\He}{\mathbb{H}}
+\newcommand{\Hi}{\mathcal{H}}
+\newcommand{\Hint}{\underline{\sc Hint:} }
+\DeclareMathOperator{\hs}{\star\!\!}
+\DeclareMathOperator{\st}{\star}
+\newcommand{\J}{\mathscr{J}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\KK}{Kaluza-Klein\ }
+\newcommand{\Lag}{\mathscr{L}}
+\newcommand{\Li}{\mathcal{L}}
+\newcommand{\La}[1][]{\triangle_{#1}}
+\newcommand{\Lap}{\nabla^2}
+\newcommand{\lr}[1]{\stackrel{\leftrightarrow}{#1}}
+\newcommand{\M}{\ensuremath{\mathscr{M}}}
+\DeclareMathOperator{\Mat}{Mat}
+\newcommand{\Mi}{\mathcal{M}}
+\newcommand{\MN}{Maldacena-N\'u\~nez\ }
+\newcommand{\N}{\ensuremath{\mathscr{N}}}
+\newcommand{\Na}{\mathbb{N}}
+%% \newcommand{\No}{\mathcal{N}}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\Op}{\mathcal{O}}
+\newcommand{\Or}{\mathscr{O}}
+\newcommand\pder[3][]{\frac{\partial^{#1}{#2}}{\partial {#3}^{#1}}}
+\newcommand\pdern[4][]{\frac{\partial^{#1}#2}{\partial #3\cdots\partial #4}}
+\DeclareMathOperator{\Pfaff}{Pfaff}
+\newcommand{\Qh}[1][]{\ensuremath{\hat{Q}_{#1}}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Ri}{\mathcal{R}}
+%% \newcommand{\S}{\mathscr{S}}
+\newcommand{\SM}{Standard Model {}}%\mathscr{S}}
+\DeclareDocumentCommand\Te{o o m }{\mathcal{T}{}^{#1}_{#2}(#3)}
+\newcommand{\T}{\mathscr{T}}
+\newcommand{\tor}{\mathcal{T}}
+\newcommand{\tors}[3]{\mathcal{T}{}_{#1}{}^{#2}{}_{#3}}
+\newcommand{\torss}[3]{T_{#1}{}^{#2}{}_{#3}}
+\newcommand\vdj[1]{\left< \Delta J \right>_{#1}}
+\newcommand{\w}{{\scriptstyle\wedge}\!}
+\newcommand{\we}{{\scriptstyle\wedge}}
+\newcommand{\Z}{\mathbb{Z}}
+
+\newcommand{\dbar}[1]{\ensuremath{\mathchar'26\mkern-12mu \mathrm{d}^{#1}}\!}
+
+
+%--------------------------- New Greek
+\newcommand{\tht}{\ensuremath{\theta}}
+\newcommand{\bet}{\ensuremath{\bar{\eta}}}
+\newcommand{\bps}{\ensuremath{\bar{\psi}}}
+\newcommand{\bc}{\ensuremath{\bar{\chi}}}
+\newcommand{\Bps}{\ensuremath{\bar{\Psi}}}
+\newcommand{\Bx}{\ensuremath{\bar{\Xi}}}
+\newcommand{\bph}{\ensuremath{\bar{\phi}}}
+\newcommand{\vph}{\ensuremath{\varphi}}
+\newcommand{\bvph}{\ensuremath{\bar{\varphi}}}
+\newcommand{\bth}{\ensuremath{\bar{\theta}}}
+\newcommand{\hph}{\ensuremath{\hat{\phi}}}
+
+\newcommand{\bs}[1]{\boldsymbol{#1}}
+
+
+\renewcommand{\div}{{\mathbf{div}}}
+\newcommand{\grad}{{\mathbf{grad}}}
+\newcommand{\curl}{{\mathbf{curl}}}
+
+\newcommand\VI[2]{\hat{e}^{\hat{#1}}_{\hat{#2}}}
+\newcommand\VIF[1]{\hat{\boldsymbol{e}}^{\hat{#1}}}
+\newcommand\VIN[2]{\hat{E}^{\hat{#1}}_{\hat{#2}}}
+\newcommand\VINF[1]{\hat{\boldsymbol{E}}_{\hat{#1}}}
+\newcommand\hvi[2]{\hat{e}^{{#1}}_{{#2}}}
+\newcommand\hvin[2]{\hat{E}^{{#1}}_{{#2}}}
+\newcommand\hvif[1]{\hat{\boldsymbol{e}}^{{#1}}}
+\newcommand\hvinf[1]{\hat{\boldsymbol{E}}_{{#1}}}
+\newcommand\vi[2]{e^{{#1}}_{{#2}}}
+\newcommand\vin[2]{E^{{#1}}_{{#2}}}
+\newcommand\vif[1]{\boldsymbol{e}^{{#1}}}
+\newcommand\vinf[1]{\boldsymbol{E}_{{#1}}}
+%% \newcommand\Vi[2]{e^{\hat{#1}}_{\hat{#2}}}
+%% \newcommand\Vin[2]{E^{\hat{#1}}_{\hat{#2}}}
+\newcommand\GAM[1]{{\gamma}^{\hat{#1}}}
+%% \newcommand\Gam[1]{\gamma^{\hat{#1}}} 
+\newcommand\gam[1]{\gamma^{{#1}}}
+\newcommand\hgam[1]{\hat{\gamma}^{{#1}}}
+\newcommand\NAB[1]{\hat{\nabla}_{\hat{#1}}}
+\newcommand\Nab[1]{\nabla_{\hat{#1}}}
+\newcommand\nab[1]{\nabla_{{#1}}}
+\newcommand\PA[1]{\partial_{\hat{#1}}}
+\newcommand\pa[1]{\partial_{{#1}}}
+\newcommand\PAU[1]{\partial^{\hat{#1}}}
+\newcommand\pau[1]{\partial^{{#1}}}
+\newcommand\lf[1]{{\omega}^{{#1}}}
+\newcommand\lft[1]{\hat{\omega}^{{#1}}}
+\newcommand\SPI[1]{\hat{\omega}_{\hat{#1}}}
+\newcommand\SPIF[2]{\hat{\boldsymbol{\omega}}^{\hat{#1}}{}_{\hat{#2}}}
+%% \newcommand\Spi[1]{\omega_{\hat{#1}}}
+\newcommand\spi[1]{\omega_{{#1}}}
+\newcommand\tspi[1]{\tilde{\omega}_{{#1}}}
+\newcommand\spif[2]{{\boldsymbol{\omega}}^{{#1}}{}_{{#2}}}
+\newcommand\tspif[2]{{\tilde{\boldsymbol{\omega}}}^{{#1}}{}_{{#2}}}
+\newcommand\hspi[1]{\hat{\omega}_{{#1}}}
+\newcommand\hspif[2]{\hat{\boldsymbol{\omega}}^{{#1}}{}_{{#2}}}
+%%%%%%%%% Beware of the inconsistency between
+%%%%%%%%% \Rif and \RIF
+\newcommand{\RIF}[2]{\hat{\boldsymbol{\mathcal{R}}}^{\hat{#1}}{}_{\hat{#2}}}
+\newcommand{\hRif}[2]{\hat{\boldsymbol{\mathcal{R}}}^{{#1}}{}_{{#2}}}
+\newcommand{\Rif}[2]{\boldsymbol{\mathcal{R}}^{{#1}}{}_{{#2}}}
+\newcommand{\tRif}[2]{\tilde{\boldsymbol{\mathcal{R}}}^{{#1}}{}_{{#2}}}
+\newcommand{\Tf}[1]{\boldsymbol{\mathcal{T}}^{#1}}
+\newcommand{\hTf}[1]{\hat{\boldsymbol{\mathcal{T}}}^{#1}}
+\newcommand{\TF}[1]{\hat{\boldsymbol{\mathcal{T}}}^{\hat{#1}}}
+\newcommand{\Tor}[2]{\mathcal{T}^{#1}{}_{#2}}
+\newcommand{\cont}[3]{\mathcal{K}_{#1}{}^{#2}{}_{#3}}
+\newcommand{\contf}[2]{\boldsymbol{\mathcal{K}}^{#1}{}_{#2}}
+\newcommand{\hcont}[3]{\hat{\mathcal{K}}_{#1}{}^{#2}{}_{#3}}
+\newcommand{\hcontf}[2]{\hat{\boldsymbol{\mathcal{K}}}^{#1}{}_{#2}}
+\newcommand{\CONT}[3]{\hat{\mathcal{K}}_{\hat{#1}}{}^{\hat{#2}}{}_{\hat{#3}}}
+\newcommand{\CONTF}[2]{\hat{\boldsymbol{\mathcal{K}}}^{\hat{#1}}{}_{\hat{#2}}}
+
+%% \newcommand{\ket}[1]{\left.\left|#1\right.\right>}
+%% \newcommand{\bra}[1]{\left.\left<#1\right.\right|}
+\renewcommand\bra[1]{\Bra{#1}}
+\renewcommand\ket[1]{\Ket{#1}}
+\newcommand{\bkt}[3]{\Braket{ {#1} | {#2} | {#3} } }
+\newcommand{\bk}[2]{\Braket{ {#1} | {#2} } }
+\newcommand{\comm}[2]{\left[#1,#2\right]}
+\newcommand{\acomm}[2]{\left\{#1,#2\right\}}
+\newcommand{\vev}[1]{\ensuremath{\left<#1\right>}}
+\renewcommand{\set}[1]{\ensuremath{\Set{ #1 }}}
+
+\newcommand{\relphantom}[1]{\mathrel{\phantom{#1}}}
+
+\newcommand{\Ric}{\operatorname{Ric}}
+\newcommand*{\diag}{\operatorname{diag}}
+\newcommand{\id}{\operatorname{id}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\Ker}{\operatorname{Ker}}
+\renewcommand{\Im}{\operatorname{Im}}
+\newcommand{\sgn}{\operatorname{sgn}}
+\newcommand{\Ln}{\operatorname{Ln}}
+\newcommand{\Ei}{\operatorname{Ei}}
+\newcommand{\csch}{\operatorname{csch}}
+\newcommand{\arcsinh}{\operatorname{arcsinh}}
+\DeclareMathOperator\Br{Br}
+
+\newcommand{\beq}{\begin{equation}}
+\newcommand{\eeq}{\end{equation}}
+\newcommand{\ber}{\begin{eqnarray}}
+\newcommand{\eer}{\end{eqnarray}}
+
+\renewcommand{\(}{\left(}
+\renewcommand{\)}{\right)}
+\renewcommand{\[}{\left[}
+\renewcommand{\]}{\right]}
+
+\newcommand{\uf}[2][]{\ensuremath{u_{#1}\(\vec{#2}\)}}
+\newcommand{\ufb}[2][]{\ensuremath{\bar{u}_{#1}\(\vec{#2}\)}}
+\newcommand{\vf}[2][]{\ensuremath{v_{#1}\(\vec{#2}\)}}
+\newcommand{\vfb}[2][]{\ensuremath{\bar{v}_{#1}\(\vec{#2}\)}}
+\newcommand\pol[2][]{\ensuremath{\varepsilon_{#1}(\vec{#2})}}
+\newcommand\polc[2][]{\ensuremath{\varepsilon^*_{#1}(\vec{#2})}}
+\newcommand{\ann}[3]{\ensuremath{#1\(\vec{#2},#3\)}}
+\newcommand{\cre}[3]{\ensuremath{#1^\dag\(\vec{#2},#3\)}}
+%% \newcommand{\uf}[2]{\ensuremath{u\(\vec{#1},#2\)}}
+%% \newcommand{\ufb}[2]{\ensuremath{\bar{u}\(\vec{#1},#2\)}}
+%% \newcommand{\vf}[2]{\ensuremath{v\(\vec{#1},#2\)}}
+%% \newcommand{\vfb}[2]{\ensuremath{\bar{v}\(\vec{#1},#2\)}}
+%% \newcommand{\ann}[3]{\ensuremath{#1\(\vec{#2},#3\)}}
+%% \newcommand{\cre}[3]{\ensuremath{#1^\dag\(\vec{#2},#3\)}}
+
+\newcommand{\dif}{{\mathrm{d}}}
+\newcommand{\difn}[1]{{\mathrm{d}}^{#1}}
+\newcommand{\dn}[2]{{\mathrm{d}}^{#1}\!{#2}\;}
+\newcommand{\dbarn}[2]{\dbar{#1}{#2}\;}
+\newcommand*{\de}[1]{\mathop{\mathrm{d}#1}\nolimits}% differential, facultative argoment between square parentheses
+\newcommand*{\desec}[1][]{\mathop{\mathrm{d^2}#1}\nolimits}% second differential, facultative argoment between square parentheses
+\newcommand{\der}[2]{\frac{\de{#1}}{\de{#2}}}% first derivative 
+%\newcommand{\pder}[2]{\frac{\pa{}#1}{\pa{}{#2}}}% first derivative 
+\newcommand{\inlineder}[2]{\mathrm{d}{#1}/\mathrm{d}{#2}}% in-line first derivative
+\newcommand{\dersec}[2]{\frac{{\desec[#1]}}{\de[{#2}^2]}}% second derivative
+%% \newcommand{\dx}{\de[x]}% frequently used differentials
+%% \newcommand{\dy}{\de[y]}
+%\newcommand{\df}{\de[f]}
+
+%------------------
+%--------- Format
+%------------------
+\newcommand{\out}[1]{{\color{red} {#1}}}
+\newcommand{\pro}[1]{{\color{blue!70!black} {#1}}}
+\newcommand{\hl}[1]{{\color{red} \bfseries{#1}}}
+
+\newcommand\UTFSM{Departamento de F\'\i sica, Universidad T\'{e}cnica Federico Santa Mar\'\i a, \\ Casilla 110-V, Valpara\'\i so, Chile}
+\newcommand\CCTVal{Centro Cient\'\i fico Tecnol\'ogico de Valpara\'\i so, \\ Casilla 110-V, Valpara\'\i so, Chile}
+\newcommand\CFF{Centro de F\'\i sica Fundamental,  Universidad de los Andes,\\ 5101 M\'erida, Venezuela}
+
+\usepackage{url}
+\usepackage[super]{cite}
+%% \usepackage{amsmath,amsthm,amssymb,amsfonts}
+%% \usepackage{xcolor}
 %% \usepackage{ulem}
 %% \usepackage{authblk}
 \usepackage[%
@@ -12,23 +280,16 @@
   citecolor=blue
 ]{hyperref}
 \usepackage{etoolbox}
-%% \usepackage{breqn}
-
-%% \makeatletter
-%% \let\cat@comma@active\@empty
-%% \makeatother
-
-
-\input{Def-article.tex}
 
 
 
-\hypersetup{%
-  pdftitle={Corrections to Higgs to a fermion pair from gravitational torsion},
-  pdfauthor={Oscar Castillo-Felisola},
-  pdfkeywords={Higgs Decay,} {Beyond Standard Model,} {Torsion,} {Generalised Gravity.},
-  pdflang={English}
-}
+
+%% \hypersetup{%
+%%   pdftitle={Corrections to Higgs to a fermion pair from gravitational torsion},
+%%   pdfauthor={Oscar Castillo-Felisola},
+%%   pdfkeywords={Higgs Decay,} {Beyond Standard Model,} {Torsion,} {Generalised Gravity.},
+%%   pdflang={English}
+%% }
 
 
 
@@ -37,29 +298,38 @@
 %------------------
 \begin{document}
 
-\title{Corrections to $H \to f \bar{f}$ from gravitational torsion}
+\markboth{O. Castillo-Felisola, B. D\'iaz S\'aez, F. Rojas, J. Zamora-Sa\'a and A. R. Zerwekh}
+{Corrections to Higgs width decay into a fermion pair from gravitational torsion}
 
-\author{Oscar \surname{Castillo-Felisola}}
-\author{Basti\'an \surname{D\'iaz}}
-\author{Felipe \surname{Rojas}}
-\author{Jilberto \surname{Zamora}}
-\author{Alfonso R. \surname{Zerwekh}}
-\email{alfonso.zerwekh@usm.cl}
-\affiliation{\UTFSM,}
-\affiliation{\CCTVal.}
+%%%%%%%%%%%%%%%%%%%%% Publisher's Area please ignore %%%%%%%%%%%%%%
+\catchline{}{}{}{}{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%--------- Abstract
-\begin{abstract}
-  We consider the change of the Higgs width decay into a fermion pair  with respect to the standard model, due to the four-fermion contact interaction coming from the existence of gravitational torsion within the context of extra dimension scenarios. 
-\end{abstract}
 
-\pacs{02.40.Ma,04.50.Kd,04.90.+e}
-\keywords{Higgs Decay, Beyond Standard Model, Torsion, Generalised Gravity.}
+\title{CORRECTIONS TO HIGGS WIDTH DECAY INTO A FERMION PAIR FROM GRAVITATIONAL TORSION}
 
+\author{OSCAR {CASTILLO-FELISOLA},\footnote{Corresponding author} \quad BASTI\'AN {D\'IAZ}, \quad  FELIPE {ROJAS}, \\ JILBERTO {ZAMORA-SA\'A} and ALFONSO R. {ZERWEKH}}
+
+\address{\UTFSM, and \\ \CCTVal. \\ o.castillo.felisola@gmail.com}
 
 \maketitle
 
-\section{\label{intro}Introduction}
+\pub{Received (Day Month Year)}{Revised (Day Month Year)}
+
+
+%--------- Abstract
+\begin{abstract}
+  We consider the change of the Higgs width decay into a fermion pair  with respect to the standard model, due to the four-fermion contact interaction coming from the existence of gravitational torsion within the context of extra dimension scenarios.
+  \keywords{Higgs Decay; Beyond Standard Model; Torsion; Generalised Gravity.}
+\end{abstract}
+
+\ccode{PACS Nos.: 02.40.Ma,04.50.Kd,04.90.+e}
+
+
+
+%%\maketitle
+
+\section{Introduction}\label{intro}
 
 %% With the discovery of a bosonic resonance with mass of  \SI{125.6}{\GeV} at the LHC~\cite{Aaltonen:2012qt,Aad:2012tfa,Chatrchyan:2012ufa}, a thorough  analysis of its decay is mandatory for establishing the quantum numbers whether this resonance is the missing element of the standard model (SM) of particle physics, the Higgs boson. The current data suggest that the resonance resembles the Higgs boson, but still there is a change of finding new physics effects through the decay channels. Customarily, the effective theories are modelled via ``contact'' four-fermion interactions, which complement the usual SM physics.
 
@@ -72,20 +342,20 @@
 
 The recent discovery of a bosonic resonance with mass of \SI{125.6}{\GeV} at the LHC~\cite{Aaltonen:2012qt,Aad:2012tfa,Chatrchyan:2012ufa}, has open the possibility of studying in details the electroweak symmetry breaking sector. The current data suggest that the resonance resembles the standard Higgs boson.   Since no deviation from the standard model (SM) has been already observed, it is possible that a New Physics sector may still exist at an energy scale high enough to escape direct detection at the LHC. In such a case, the presence of New Physics can be manifested, although more subtly, through corrections to the properties of the standard particles induced at loop level. For instance, it is expected that  precision measurements of the properties of the Higgs boson at a Higgs factory (for example, the planned International Linear Collider or ILC) could shed light on the nature of an eventual non-standard sector.
 
-One of the best motivated extensions of the SM is the possible existence of more than three spatial dimensions. In this scenario, it is tempting to consider in the bulk an extended gravitational sector. Indeed, it seems that Einstein's theory of gravity, known as General Relativity (GR), is a low energy effective theory of a more fundamental one due to the lack of a mechanism of quantize the theory~\footnote{There are several attempts of quantize the gravitational interactions, see for example Refs.~\cite{Ashtekar:1986yd,*Ashtekar:1987gu,*Ashtekar:2004eh,DeWitt:1967yk,*DeWitt:1967ub,*DeWitt:1967uc} (for a historical review see Ref.~\cite{Rovelli:2000aw}).}. In an effort to obtain a more fundamental theory of gravity, several generalizations of GR have been proposed. From these theories, the minimal generalization was proposed by Cartan dates back to the 20's~\cite{Cartan-Einstein,Cartan1922,*Cartan1923,*Cartan1924,*Cartan1925}, and it is known as Einstein--Cartan theory of gravity (ECT). The main difference between GR and ECT is that the latter does not assume the gravitational connection to be the one of Levi-Civita, and therefore there is an extra component of the connection known as (gravitational) torsion. It is worth to mention that in this minimal frame, the gravitational torsion turns to be a non-dynamical field and can be integrated out of the system~\footnote{Interestingly, for pure gravity the equation of motion for the torsion yields the vanishing torsion condition.}.
+One of the best motivated extensions of the SM is the possible existence of more than three spatial dimensions. In this scenario, it is tempting to consider in the bulk an extended gravitational sector. Indeed, it seems that Einstein's theory of gravity, known as General Relativity (GR), is a low energy effective theory of a more fundamental one due to the lack of a mechanism of quantize the theory.\footnote{There are several attempts of quantize the gravitational interactions, see for example Refs.~\refcite{Ashtekar:1986yd,Ashtekar:1987gu,Ashtekar:2004eh,DeWitt:1967yk,DeWitt:1967ub,DeWitt:1967uc} (for a historical review see Ref.~\refcite{Rovelli:2000aw}).} In an effort to obtain a more fundamental theory of gravity, several generalizations of GR have been proposed. From these theories, the minimal generalization was proposed by Cartan dates back to the 20's~\cite{Cartan-Einstein,Cartan1922,Cartan1923,Cartan1924,Cartan1925}, and it is known as Einstein--Cartan theory of gravity (ECT). The main difference between GR and ECT is that the latter does not assume the gravitational connection to be the one of Levi-Civita, and therefore there is an extra component of the connection known as (gravitational) torsion. It is worth to mention that in this minimal frame, the gravitational torsion turns to be a non-dynamical field and can be integrated out of the system.\footnote{Interestingly, for pure gravity the equation of motion for the torsion yields the vanishing torsion condition.}
 
-When the ECT of gravity is coupled with fermionic matter, despite the fact that torsion can still be integrated out, its integration produces a four-fermion contact interaction~\cite{Kibble:1961ba,RevModPhys.48.393,Shapiro:2001rz,SUGRA-book,Castillo-Felisola:2013jva}. In four dimensions the effective four-fermion interaction term has a coupling constant proportional to Newton's gravitational constant, $G_N\sim M_{\text{pl}}^{-2}$, which heavily suppresses the possible phenomenology coming from this term~\footnote{As remarked by L. Fabbri, the most general torsional generalization of Einstein gravity, the effective four-fermion interaction term has a coupling constant proportional to a yet undetermined constant~\cite{Fabbri:2011kq}.}. However, in the last decades scenarios with extra dimensions have been proposed as a way to achieve naturalness between the electroweak and the (fundamental) gravitational scales, $M_*$, while the known Planck's mass, $M_{\text{pl}}$, is an enhanced effective gravitational scale~\cite{ADD1,*AADD,*ADD2,RS1,*RS2}.
+When the ECT of gravity is coupled with fermionic matter, despite the fact that torsion can still be integrated out, its integration produces a four-fermion contact interaction~\cite{Kibble:1961ba,RevModPhys.48.393,Shapiro:2001rz,SUGRA-book,Castillo-Felisola:2013jva}. In four dimensions the effective four-fermion interaction term has a coupling constant proportional to Newton's gravitational constant, $G_N\sim M_{\text{pl}}^{-2}$, which heavily suppresses the possible phenomenology coming from this term.\footnote{As remarked by L. Fabbri, the most general torsional generalization of Einstein gravity, the effective four-fermion interaction term has a coupling constant proportional to a yet undetermined constant~\cite{Fabbri:2011kq}.} However, in the last decades scenarios with extra dimensions have been proposed as a way to achieve naturalness between the electroweak and the (fundamental) gravitational scales, $M_*$, while the known Planck's mass, $M_{\text{pl}}$, is an enhanced effective gravitational scale~\cite{ADD1,AADD,ADD2,RS1,RS2}.
 
 %% The purpose of this paper is to analyze the variation of the decay width of the Higgs boson into a lepton pair, by the inclusion of a contact four-fermion interaction induced by the presence of gravitational torsion, and analyze the constraints to our model imposed by the current results in the LHC experiments.
 
 
-This new interaction induced by torsion may originates observable effects such as explaining the origin mass generation~\cite{Castillo-Felisola:2013jva}, several cosmological problems~\cite{Poplawski:2010jv,*Poplawski:2010kb,*Poplawski:2011xf,*Poplawski:2011wj,*Fabbri:2012yg,*Vignolo:2014wva}, neutrino oscillation phenomena~\cite{Capozziello:2013dja}, impose limits on extra dimensional model~\cite{Chang:2000yw,*Lebedev:2002dp,*CCSZ,*Castillo-Felisola:2014iia}, and changing one-loop observable~\cite{Castillo-Felisola:2014xba}. A possible  effect of this four-fermion interaction is to modify , through loop effects, the decay width of the Higgs boson into a pair of fermions. This deviation from standard predictions could be observable, in principle, by mean of precision measurements performed in a future lepton collider. The  aim of this work is to study the feasibility of this program at the ILC. To this end, a brief review of the setup is presented in Sec.~\ref{CEG}. Then, in Sec.~\ref{1loop} we show the one-loop corrections to the Higgs decay into a lepton pair, due to the effective four-fermion interaction. Finally, in Sec.~\ref{phenom} we analyze the phenomenological constraints to the parameter of our model imposed by the experimental data, and we compare how this restrictions vary with the number of extra dimensions.
+This new interaction induced by torsion may originates observable effects such as explaining the origin mass generation~\cite{Castillo-Felisola:2013jva}, several cosmological problems~\cite{Poplawski:2010jv,Poplawski:2010kb,Poplawski:2011xf,Poplawski:2011wj,Fabbri:2012yg,Vignolo:2014wva}, neutrino oscillation phenomena~\cite{Capozziello:2013dja}, impose limits on extra dimensional model~\cite{Chang:2000yw,Lebedev:2002dp,CCSZ,Castillo-Felisola:2014iia}, and changing one-loop observable~\cite{Castillo-Felisola:2014xba}. A possible  effect of this four-fermion interaction is to modify , through loop effects, the decay width of the Higgs boson into a pair of fermions. This deviation from standard predictions could be observable, in principle, by mean of precision measurements performed in a future lepton collider. The  aim of this work is to study the feasibility of this program at the ILC. To this end, a brief review of the setup is presented in Sec.~\ref{CEG}. Then, in Sec.~\ref{1loop} we show the one-loop corrections to the Higgs decay into a lepton pair, due to the effective four-fermion interaction. Finally, in Sec.~\ref{phenom} we analyze the phenomenological constraints to the parameter of our model imposed by the experimental data, and we compare how this restrictions vary with the number of extra dimensions.
 
 
 
-\section{\label{CEG}Effective interaction through gravitational torsion}
+\section{Effective interaction through gravitational torsion}\label{CEG}
 
-The standard formalism used in the GR, where the physical field is the metric, is know as second order formalism --- due to the fact that the equations of motion are of second order ---. However, in this section we shall deal with the first order formalism~\footnote{Additionally, we make extensive use of the formalism of differential forms~\cite{Cartan-calc,*Zanelli:2005sa}.}, which accomplish the same task but splits the physical objects into two types fields known as vielbeins \mbox{($\vif{a} = \vi{a}{\mu}\de{x}^\mu$)} and spin connection \mbox{($\spif{ab}{} = \spi{\mu}{}^{ab}\de{x}^\mu$).} We shall use the notation in Ref.~\cite{Castillo-Felisola:2013jva,Castillo-Felisola:2014iia,Castillo-Felisola:2014xba}, where hatted quantities refers to higher dimensional objects and/or indices, and $\ga^{*}$ is the four-dimensional chiral matrix.
+The standard formalism used in the GR, where the physical field is the metric, is know as second order formalism --- due to the fact that the equations of motion are of second order ---. However, in this section we shall deal with the first order formalism,\footnote{Additionally, we make extensive use of the formalism of differential forms~\cite{Cartan-calc,Zanelli:2005sa}.} which accomplish the same task but splits the physical objects into two types fields known as vielbeins \mbox{($\vif{a} = \vi{a}{\mu}\de{x}^\mu$)} and spin connection \mbox{($\spif{ab}{} = \spi{\mu}{}^{ab}\de{x}^\mu$).} We shall use the notation in Refs.~\refcite{Castillo-Felisola:2013jva,Castillo-Felisola:2014iia,Castillo-Felisola:2014xba}, where hatted quantities refers to higher dimensional objects and/or indices, and $\ga^{*}$ is the four-dimensional chiral matrix.
 
 We start from the action which includes the ECT of gravity and Dirac fields interacting with the gravitational field,
 \begin{equation}
@@ -110,7 +380,7 @@ Since the  Eq.~\eqref{tor-eom} is algebraic, it can be substituted back into the
 \end{equation}
 which is suppressed by the Planck mass as anticipated. Since the value of the Planck mass is several orders of magnitude higher than any order scale in the SM of particle physics, this effective interaction is negligible for any phenomenological effect.
 
-Nevertheless, in the last decades some higher dimensional scenarios have been proposed such that there is a fundamental scale of gravity ($M_*$) which is enhanced in the four-dimensional effective theory up to the Planck mass~\cite{ADD1,*AADD,*ADD2,RS1,*RS2}. In these scenarios, the gravitational scale can be so low as a few \si{\TeV}, providing a solution to the huge difference between the SM scale and gravitational scale, known as the hierarchy problem. Additionally, the change in the gravitational scale have repercussions in the suppression of the four-fermion interaction, because $\kappa$ in Eq.~\eqref{Lag4FI} is replaced by $\kappa_*$.
+Nevertheless, in the last decades some higher dimensional scenarios have been proposed such that there is a fundamental scale of gravity ($M_*$) which is enhanced in the four-dimensional effective theory up to the Planck mass~\cite{ADD1,AADD,ADD2,RS1,RS2}. In these scenarios, the gravitational scale can be so low as a few \si{\TeV}, providing a solution to the huge difference between the SM scale and gravitational scale, known as the hierarchy problem. Additionally, the change in the gravitational scale have repercussions in the suppression of the four-fermion interaction, because $\kappa$ in Eq.~\eqref{Lag4FI} is replaced by $\kappa_*$.
 
 If we restrict ourselves to consider a single extra dimension, using the Clifford algebra decomposition from five dimensions to down to four, the interaction in Eq.~\eqref{Lag4FI} give rise to axial--axial and tensor-axial--tensor-axial interactions~\cite{Castillo-Felisola:2013jva}
 \begin{equation}
@@ -124,23 +394,27 @@ If we restrict ourselves to consider a single extra dimension, using the Cliffor
 %% Additionally, the fermionic fields must be decomposed in terms of four-dimensional ones, which are chiral (see Ref.~\cite{Castillo-Felisola:2013jva}).
 
 
-\section{\label{1loop}One-loop calculation of $H \to \ell \bar{\ell}$}
+\section{One-loop calculation of $H \to \ell \bar{\ell}$}\label{1loop}
 
-In this section we shall consider the contribution of the effective four-fermion interaction in Eq.~\eqref{Eff4fi}, to the decay of the Higgs boson into a lepton pair, which is a one-loop process. To this end, we split the effective interaction into a current--current interaction (inspired by Ref.~\cite{GonzalezGarcia:1998ay})
+In this section we shall consider the contribution of the effective four-fermion interaction in Eq.~\eqref{Eff4fi}, to the decay of the Higgs boson into a lepton pair, which is a one-loop process. To this end, we split the effective interaction into a current--current interaction (inspired by Ref.~\refcite{GonzalezGarcia:1998ay})
 \begin{equation}
   \Lag_{\text{eff}} = \frac{3 \kappa_*^2}{16} \( J_{a}^* \) \( J^{a*} \) + \frac{3 \kappa_*^2}{32} \( J_{ab}^* \) \( J^{ab*} \),
   \label{new4fi}
 \end{equation}
 which generate two different contributions to the $H \to \ell \bar{\ell}$ process, which will be called \emph{s-channel} (see Fig.~\ref{fig:s}) and \emph{t-channel} (see Fig.~\ref{fig:t}) respectively.
 
-\begin{figure}[ht]
-  \includegraphics{Pics/s-channel.pdf}
+\begin{figure}[ph]
+  \begin{center}
+    \includegraphics[width=.5\textwidth]{Pics/s-channel.pdf}
+  \end{center}
   \caption{Higgs to lepton pair through the four-fermion \mbox{``s-channel''.}}
   \label{fig:s}
 \end{figure}
 
-\begin{figure}[ht]
-  \includegraphics{Pics/t-channel.pdf}
+\begin{figure}[ph]
+  \begin{center}
+    \includegraphics[width=.5\textwidth]{Pics/t-channel.pdf}
+  \end{center}
   \caption{Higgs to lepton pair through the four-fermion \mbox{``t-channel''.}}
   \label{fig:t}
 \end{figure}
@@ -156,7 +430,7 @@ where $S$ and $P$ are the scalar and pseudo-scalar form factors, and $\ga^*$ is 
 \end{equation}
 Notice that for the Higgs boson $S^{\text{tree}} = 1$ and $P^{\text{tree}} = 0$.
 
-We have used the Mathematica package ``FeynCalc''~\cite{Kublbeck:1992mt} to calculate the correction to the Higgs width decay. Although we consider the general current presented in Eq.~\eqref{Scur}, the result shows that no pseudo-scalar form factor is generated, i.e., $P = 0$ to one-loop.
+We have used the Mathematica package ``FeynCalc''~\cite{Kublbeck:1992mt} to calculate the correction to the Higgs width decay. Although we consider the general current presented in Eq.~\eqref{Scur}, the result shows that no pseudo-scalar form factor is generated, i.e., $P = 0$ to one-loop. Additionally, due to the Lorentz structure of the fermionic currents composing the four-fermion contact interaction, the ``t-channel'' Feynman diagram (Fig.~\ref{fig:t}) does not contribute to the width decay of the Higgs boson.
 
 In order to obtain a numerical result, we assume that the fundamental scale of gravity $M_*$ is of the order of the New Physics scale $\Lambda$. Therefore, our results, despite of coming from extra dimensions, do not depend explicitly of the number of extra dimensions. We parametrize the corrections to the width decay as a function of this scale of New Physics.
 
@@ -165,23 +439,36 @@ In our model, the correction to the scalar form factor induced by the four-fermi
   \delta S = - \frac{15}{64} \frac{1}{\Lambda^2} m_f \( m_H^2 - 2 m_f^2 \) \log\( \frac{\Lambda^2}{m_H^2} \).
 \end{equation}
 This results into a variation of the width decay  of the form
-\begin{widetext}
-  \begin{equation}
-    \delta \Gamma_{\text{4FI}} = -\frac{15}{16384} \frac{g^2 m_H m_f^2}{\pi m_W^2 \Lambda^2} \( m_H^2 - 2 m_f^2 \) \( 1 - \frac{4m_f^2}{m_H^2} \)^{3/2} \log\( \frac{\Lambda^2}{m_H^2} \) .
-  \end{equation}
-\end{widetext}
+\begin{equation}
+  \delta \Gamma_{\text{4FI}} = -\frac{15}{16384} \frac{g^2 m_H m_f^2}{\pi m_W^2 \Lambda^2} \( m_H^2 - 2 m_f^2 \) \( 1 - \frac{4m_f^2}{m_H^2} \)^{3/2} \log\( \frac{\Lambda^2}{m_H^2} \) .
+\end{equation}
 The above formula gets modified by a factor of $N_c$ when we consider decay into quarks.
 %% this factor enters linearly because the modification the main contribution to the variation of the width decay comes from the interaction term.
 
-We focus on decays into the heaviest lepton and quark pairs, 
 
-\section{\label{phenom}Phenomenological implications}
+\section{Phenomenological implications}\label{phenom}
+
+As mentioned, only the ``s-channel'' Feynman diagram contribute to the variation of the width decay of the Higgs into fermion pairs. Since the torsion induced four-fermion interaction comes from the kinematic term, although the dimensional reduction induces a Kaluza--Klein tower in the effective particle spectrum, indisputably the fermion around the loop has the same flavour as the outgoing particles. Therefore, none of the particles in the Kaluza--Klein tower enter in the analysis.
+
+We focus on decays into $\tau^+ \tau^-$ and $b \bar{b}$ pairs, because these are the main fermionic decay modes. In order to estimate the size of the effect we compare it with the total width decay of the Higgs predicted by the SM. The results are shown in Fig.~\ref{fig:Hdt}.
+\begin{figure}[ph]
+  \begin{center}
+    \includegraphics[width=.55\textwidth]{Pics/Higgs_decay_torsion.pdf} 
+  \end{center}
+  \caption{Variation to the partial width decay of the Higgs into tau lepton and bottom quark pairs, normalized by the total width decay.}
+  \label{fig:Hdt}
+\end{figure}
+
+From the plot (Fig.~\ref{fig:Hdt}), it is clear that the variation on the Higgs width decay is one order of magnitude enhanced in the case of the bottom quark pair, in comparison with the decay into $\tau$ pairs. For fundamental gravitational scales as low as \SI{1}{\TeV}, the correction induced by the torsion-induced interaction is of about \num{11}\% for the decay $H \to b\bar{b}$, while for the process $H \to \tau^+ \tau^-$ it decreases to \num{1}\%. Effects of these orders could be observed at the Large Hadron Collider (LHC) within a few years, when the luminosity will be improved and the statistics is enough for accomplishing the required precision.
+
+However, recent analysis on the constraints imposed by the torsion induced four-fermion interaction on the $Z$ boson decay (see Ref.~\refcite{Lebedev:2002dp,Castillo-Felisola:2014xba}), the strongest limit is $\Lambda \simeq \SI{30}{\TeV}$. Given this stringent limit, the correction to the width decay of the Higgs drops to approximately \num{.1}\% and \num{.05}\% for bottom and tau pairs respectively. Such limits are unlike to be measure in current experiments, but could be reached at future Higgs factories, such as the International Linear Collider (ILC) or the Compact Linear Collider (CLIC), which will provide a deeper inside of the core process because the electron-positron annihilation is clearer, due to the reduced background.
+
+\section*{Acknowledgements}
+
+This work was partially supported by CONICYT (Chile) under project No. 79140040.
 
 
-
-%% \nocite{GonzalezGarcia:1998ay}%,Cartan1922,Cartan1923,Cartan1924,Cartan1925}
-
-\bibliographystyle{apsrev4-1}
+\bibliographystyle{ws-mpla}
 \bibliography{References.bib}
 
 \end{document}
