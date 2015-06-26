@@ -293,7 +293,7 @@ The four-fermion interaction induced by torsion may originates observable effect
 
 The standard formalism used in the GR, where the physical field is the metric, is know as second order formalism ---due to the fact that the equations of motion are of second order---. However, in this section we shall deal with the first order formalism,\footnote{Additionally, we make extensive use of the formalism of differential forms~\cite{Cartan-calc,Zanelli:2005sa}.} which accomplish the same goal through the splitting the equations of motion into first order differential equations  by introducing two independent fields, known as vielbeins \mbox{($\vif{a} = \vi{a}{\mu}\de{x}^\mu$)} and spin connection \mbox{($\spif{ab}{} = \spi{\mu}{}^{ab}\de{x}^\mu$).} These fields define the torsion and curvature two-forms via the Cartan structure equations
 \begin{equation}
-  \df[\vif{a}] + \spif{a}{b} \we \vif{b} = \Tf{a} \quad \text{and} \quad \df[\spif{ab}{}] + \spif{a}{c} \we \spif{b}{c} = \Rif{ab}{}.
+  \df[\vif{a}] + \spif{a}{b} \we \vif{b} = \Tf{a} \quad \text{and} \quad \df[\spif{ab}{}] + \spif{a}{c} \we \spif{cb}{} = \Rif{ab}{}.
 \end{equation}
 We shall use the notation in Refs.~\refcite{Castillo-Felisola:2013jva,Castillo-Felisola:2014iia,Castillo-Felisola:2014xba}, where hatted quantities refer to higher dimensional objects and/or indices, and $\ga^{*}$ is the four-dimensional chiral matrix.
 
@@ -380,9 +380,11 @@ where $S$ and $P$ are the scalar and pseudo-scalar form factors, and $\ga^*$ is 
 \begin{equation}
   \Gamma(H \to \ell \bar{\ell}) = \frac{1}{8 \pi} \frac{M_H m_\ell^2}{v^2}  \sqrt{1 - \frac{4 m_\ell^2}{M_H^2} }  S^2 \( 1 + \frac{P^2}{S^2} - \frac{4 m_\ell^2}{M_H^2} \),
 \end{equation}
-with $v$ the vacuum expectation value. Notice that for the Higgs boson $S^{\text{tree}} = 1$ and $P^{\text{tree}} = 0$.
+with $v$ the vacuum expectation value. At tree level, the form factors for the Higgs boson are $S^{\text{tree}} = 1$ and $P^{\text{tree}} = 0$.
 
-We used the Mathematica package ``FeynCalc''~\cite{Kublbeck:1992mt} to calculate the correction to the Higgs width decay. Although we consider the general current presented in Eq.~\eqref{Scur}, the result shows that no pseudo-scalar form factor is generated, i.e., $P = 0$ to one-loop. Additionally, due to the Lorentz structure of the fermionic currents composing the four-fermion contact interaction, the ``t-channel'' Feynman diagram (Fig.~\ref{fig:t}) does not contribute to the width decay of the Higgs boson. A consequence of this, is that heavy fermions coming from the Kaluza--Klein tower do not affect the width decay through this mechanism.
+We calculate the correction to the Higgs width decay using dimensional regularization. Although dimensional regularization is blind to quadratic divergences, these do not appear in the result because similar terms contribute to fermions self-energy, which is protected by the chiral symmetry. The divergent $\frac{1}{\epsilon}$ terms, which are expressed in terms of the integrals $A_0(m_f^2)$ and $B_0(M_h^2,m_f^2,m_f^2)$ of Passarino--Veltman, which are associated with the corresponding logarithmic divergences. We used the Mathematica package ``FeynCalc''~\cite{Kublbeck:1992mt} to calculate these contributions.
+
+Although we consider the general current presented in Eq.~\eqref{Scur}, the result shows that no pseudo-scalar form factor is generated, i.e., $P = 0$ to one-loop. Additionally, due to the Lorentz structure of the fermionic currents composing the four-fermion contact interaction, the ``t-channel'' Feynman diagram (Fig.~\ref{fig:t}) does not contribute to the width decay of the Higgs boson. A consequence of this, is that heavy fermions coming from the Kaluza--Klein tower do not affect the width decay through this mechanism.
 
 In order to obtain a model independent numerical result, we replace the fundamental scale of gravity $M_*$ by the \emph{new physics} scale $\Lambda$. Thus, $\Lambda$ is a modulation of $M_*$.
 %% Therefore, our results, despite of coming from extra dimensions, do not depend explicitly of the number of extra dimensions.
@@ -429,8 +431,238 @@ B. D.~S. thanks to the Universidad Austral de Chile for the hospitality during t
 This work was partially supported by USM grant No. 11.15.77, CONICYT (Chile) under project No. 79140040 and FONDECYT (Chile) projects No. 1120346 and FSM-1204.
 
 
-\bibliographystyle{ws-mpla}
-\bibliography{References.bib}
+%% \bibliographystyle{ws-mpla}
+%% \bibliography{References.bib}
+\begin{thebibliography}{10}
+
+\bibitem{Aaltonen:2012qt}
+CDF and D0 Collaborations, T.~Aaltonen {\em et~al.}, {\em Phys. Rev. Lett.}
+  {\bf 109},   071804  (2012), \href{http://arxiv.org/abs/1207.6436}{{\ttfamily
+  arXiv:1207.6436 [hep-ex]}}.
+
+\bibitem{Aad:2012tfa}
+ATLAS Collaboration, G.~Aad {\em et~al.}, {\em Phys. Lett. B} {\bf 716},  ~1
+  (2012), \href{http://arxiv.org/abs/1207.7214}{{\ttfamily arXiv:1207.7214
+  [hep-ex]}}.
+
+\bibitem{Chatrchyan:2012ufa}
+CMS Collaboration, S.~Chatrchyan {\em et~al.}, {\em Phys. Lett. B} {\bf 716},
+  ~30  (2012), \href{http://arxiv.org/abs/1207.7235}{{\ttfamily arXiv:1207.7235
+  [hep-ex]}}.
+
+\bibitem{Aad:2015zhl}
+ATLAS and CMS Collaborations, G.~Aad {\em et~al.}, {\em Phys. Rev. Lett.} {\bf
+  114},   191803  (2015), \href{http://arxiv.org/abs/1503.07589}{{\ttfamily
+  arXiv:1503.07589 [hep-ex]}}.
+
+\bibitem{DeWitt:1967yk}
+B.~S. DeWitt, {\em Phys. Rev.} {\bf 160},   1113  (1967).
+
+\bibitem{DeWitt:1967ub}
+B.~S. DeWitt, {\em Phys. Rev.} {\bf 162},   1195  (1967).
+
+\bibitem{DeWitt:1967uc}
+B.~S. DeWitt, {\em Phys. Rev.} {\bf 162},   1239  (1967).
+
+\bibitem{'tHooft:1973us}
+G.~'t~Hooft, {\em Nucl. Phys. B} {\bf 62},   444  (1973).
+
+\bibitem{'tHooft:1974bx}
+G.~'t~Hooft and M.~J.~G. Veltman, {\em Annales Poincare Phys. Theor. A} {\bf
+  20},  ~69  (1974).
+
+\bibitem{Deser:1974cy}
+S.~Deser and P.~van Nieuwenhuizen, {\em Phys. Rev. D} {\bf 10},   411  (1974).
+
+\bibitem{Deser:1974cz}
+S.~Deser and P.~van Nieuwenhuizen, {\em Phys. Rev. D} {\bf 10},   401  (1974).
+
+\bibitem{Ashtekar:1986yd}
+A.~Ashtekar, {\em Phys. Rev. Lett.} {\bf 57}, 2244  (1986).
+
+\bibitem{Ashtekar:1987gu}
+A.~Ashtekar, {\em Phys. Rev. D} {\bf 36},   1587  (1987).
+
+\bibitem{Ashtekar:2004eh}
+A.~Ashtekar and J.~Lewandowski, {\em Class. Quant. Grav.} {\bf 21},   R53
+  (2004), \href{http://arxiv.org/abs/gr-qc/0404018}{{\ttfamily
+  arXiv:gr-qc/0404018 [gr-qc]}}.
+
+\bibitem{Rovelli:2000aw}
+C.~Rovelli  (2000), \href{http://arxiv.org/abs/gr-qc/0006061}{{\ttfamily
+  arXiv:gr-qc/0006061 [gr-qc]}}.
+
+\bibitem{Cartan1922}
+E.~Cartan, {\em C. R. Acad. Sci. Paris} {\bf 174},   593  (1922).
+
+\bibitem{Cartan1923}
+E.~Cartan, {\em Ann. Ec. Norm. Super.} {\bf 40},   325  (1923).
+
+\bibitem{Cartan1924}
+E.~Cartan, {\em Ann. Ec. Norm. Super.} {\bf 41},  ~1  (1924).
+
+\bibitem{Cartan1925}
+E.~Cartan, {\em Ann. Ec. Norm. Super.} {\bf 42},  ~17  (1925).
+
+\bibitem{Cartan-Einstein}
+R.~Debever (ed.), {\em Elie Cartan - Albert Einstein Letters on Absolute
+  Parallelism 1929-1932} (Princeton University Press, 1979).
+
+\bibitem{Kibble:1961ba}
+T.~W.~B. Kibble, {\em J. Math. Phys.} {\bf 2}, 212  (1961).
+
+\bibitem{Hehl:1976kj}
+F.~W. Hehl, P.~von~der Heyde, G.~D. Kerlick and J.~M. Nester, {\em Rev. Mod.
+  Phys.} {\bf 48},   393  (1976).
+
+\bibitem{Shapiro:2001rz}
+I.~L. Shapiro, {\em Phys. Rep.} {\bf 357},   113  (2002),
+  \href{http://arxiv.org/abs/hep-th/0103093}{{\ttfamily arXiv:hep-th/0103093
+  [hep-th]}}.
+
+\bibitem{Hammond:2002rm}
+R.~T. Hammond, {\em Rept. Prog. Phys.} {\bf 65},   599  (2002).
+
+\bibitem{SUGRA-book}
+D.~Z. Freedman and A.~van Proyen, {\em Supergravity} (CUP, 2012).
+
+\bibitem{ADD1}
+N.~Arkani-Hamed, S.~Dimopoulos and G.~R. Dvali, {\em Phys. Lett. B} {\bf 429},
+  263  (1998), \href{http://arxiv.org/abs/hep-ph/9803315}{{\ttfamily
+  arXiv:hep-ph/9803315}}.
+
+\bibitem{AADD}
+I.~Antoniadis, N.~Arkani-Hamed, S.~Dimopoulos and G.~R. Dvali, {\em Phys. Lett.
+  B} {\bf 436},   257  (1998),
+  \href{http://arxiv.org/abs/hep-ph/9804398}{{\ttfamily arXiv:hep-ph/9804398}}.
+
+\bibitem{ADD2}
+N.~Arkani-Hamed, S.~Dimopoulos and G.~R. Dvali, {\em Phys. Rev. D} {\bf 59},
+  086004  (1999), \href{http://arxiv.org/abs/hep-ph/9807344}{{\ttfamily
+  arXiv:hep-ph/9807344}}.
+
+\bibitem{RS1}
+L.~Randall and R.~Sundrum, {\em Phys. Rev. Lett.} {\bf 83},   3370  (1999),
+  \href{http://arxiv.org/abs/hep-ph/9905221}{{\ttfamily arXiv:hep-ph/9905221}}.
+
+\bibitem{RS2}
+L.~Randall and R.~Sundrum, {\em Phys. Rev. Lett.} {\bf 83},   4690  (1999),
+  \href{http://arxiv.org/abs/hep-th/9906064}{{\ttfamily arXiv:hep-th/9906064}}.
+
+\bibitem{Belyaev:1997zv}
+A.~S. Belyaev and I.~L. Shapiro, {\em Phys. Lett. B} {\bf 425},   246  (1998),
+  \href{http://arxiv.org/abs/hep-ph/9712503}{{\ttfamily arXiv:hep-ph/9712503
+  [hep-ph]}}.
+
+\bibitem{Belyaev:1998ax}
+A.~S. Belyaev and I.~L. Shapiro, {\em Nucl. Phys. B} {\bf 543},  ~20  (1999),
+  \href{http://arxiv.org/abs/hep-ph/9806313}{{\ttfamily arXiv:hep-ph/9806313
+  [hep-ph]}}.
+
+\bibitem{Belyaev:2007fn}
+A.~S. Belyaev, I.~L. Shapiro and M.~A.~B. do~Vale, {\em Phys. Rev. D} {\bf 75},
+    034014  (2007), \href{http://arxiv.org/abs/hep-ph/0701002}{{\ttfamily
+  arXiv:hep-ph/0701002 [hep-ph]}}.
+
+\bibitem{Castillo-Felisola:2013jva}
+O.~Castillo-Felisola, C.~Corral, C.~Villavicencio and A.~R. Zerwekh, {\em Phys.
+  Rev. D} {\bf 88},   124022  (2013),
+  \href{http://arxiv.org/abs/1310.4124}{{\ttfamily arXiv:1310.4124 [hep-ph]}}.
+
+\bibitem{Puetzfeld:2004yg}
+D.~Puetzfeld, {\em New Astron. Rev.} {\bf 49},  ~59  (2005),
+  \href{http://arxiv.org/abs/gr-qc/0404119}{{\ttfamily arXiv:gr-qc/0404119
+  [gr-qc]}}.
+
+\bibitem{Capozziello:2009mq}
+S.~Capozziello and S.~Vignolo, {\em Annalen Phys.} {\bf 19}, 238  (2010),
+  \href{http://arxiv.org/abs/0910.5230}{{\ttfamily arXiv:0910.5230 [gr-qc]}}.
+
+\bibitem{Poplawski:2010jv}
+N.~J. Pop{\l}awski, {\em Ann. Phys.} {\bf 523},   291  (2011),
+  \href{http://arxiv.org/abs/1005.0893}{{\ttfamily arXiv:1005.0893 [gr-qc]}}.
+
+\bibitem{Poplawski:2010kb}
+N.~J. Pop{\l}awski, {\em Phys. Lett. B} {\bf 694},   181  (2010),
+  \href{http://arxiv.org/abs/1007.0587}{{\ttfamily arXiv:1007.0587
+  [astro-ph.CO]}}.
+
+\bibitem{Poplawski:2011xf}
+N.~J. Pop{\l}awski, {\em Phys. Rev. D} {\bf 83},   084033  (2011),
+  \href{http://arxiv.org/abs/1101.4012}{{\ttfamily arXiv:1101.4012 [gr-qc]}}.
+
+\bibitem{Poplawski:2011wj}
+N.~J. Pop{\l}awski, {\em Gen. Rel. Grav.} {\bf 44}, 491  (2012),
+  \href{http://arxiv.org/abs/1102.5667}{{\ttfamily arXiv:1102.5667 [gr-qc]}}.
+
+\bibitem{Fabbri:2012yg}
+L.~Fabbri and S.~Vignolo, {\em Int. J. Theor. Phys.} {\bf 51}, 3186  (2012),
+  \href{http://arxiv.org/abs/1201.5498}{{\ttfamily arXiv:1201.5498 [gr-qc]}}.
+
+\bibitem{Vignolo:2014wva}
+S.~Vignolo, S.~Carloni and L.~Fabbri, {\em Phys. Rev. D} {\bf 91},   043528
+  (2015), \href{http://arxiv.org/abs/1412.4674}{{\ttfamily arXiv:1412.4674
+  [gr-qc]}}.
+
+\bibitem{Capozziello:2013dja}
+S.~Capozziello, L.~Fabbri and S.~Vignolo, {\em Mod. Phys. Lett. A} {\bf 28},
+  1350155  (2013), \href{http://arxiv.org/abs/1309.3856}{{\ttfamily
+  arXiv:1309.3856 [gr-qc]}}.
+
+\bibitem{Chang:2000yw}
+L.~N. Chang, O.~Lebedev, W.~Loinaz and T.~Takeuchi, {\em Phys. Rev. Lett.} {\bf
+  85},   3765  (2000), \href{http://arxiv.org/abs/hep-ph/0005236}{{\ttfamily
+  arXiv:hep-ph/0005236 [hep-ph]}}.
+
+\bibitem{Lebedev:2002dp}
+O.~Lebedev, {\em Phys. Rev. D} {\bf 65},   124008  (2002),
+  \href{http://arxiv.org/abs/hep-ph/0201125}{{\ttfamily arXiv:hep-ph/0201125
+  [hep-ph]}}.
+
+\bibitem{CCSZ}
+O.~Castillo-Felisola, C.~Corral, I.~Schmidt and A.~R. Zerwekh  (2012),
+  \href{http://arxiv.org/abs/1211.4359}{{\ttfamily arXiv:1211.4359 [hep-ph]}}.
+
+\bibitem{Castillo-Felisola:2014iia}
+O.~Castillo-Felisola, C.~Corral, I.~Schmidt and A.~R. Zerwekh, {\em Mod. Phys.
+  Lett. A} {\bf 29},   1450081  (2014),
+  \href{http://arxiv.org/abs/1404.5195}{{\ttfamily arXiv:1404.5195 [hep-ph]}}.
+
+\bibitem{Castillo-Felisola:2014xba}
+O.~Castillo-Felisola, C.~Corral, S.~Kovalenko and I.~Schmidt, {\em Phys. Rev.
+  D} {\bf 90},   024005  (2014),
+  \href{http://arxiv.org/abs/1405.0397}{{\ttfamily arXiv:1405.0397 [hep-ph]}}.
+
+\bibitem{Cartan-calc}
+E.~Cartan, {\em Les syst{\'e}mes diff{\'e}rentiels ext{\'e}rieurs et leurs
+  applications g{\'e}om{\'e}triques} (Paris, Hermann, 1945).
+
+\bibitem{Zanelli:2005sa}
+J.~Zanelli  (2005), \href{http://arxiv.org/abs/hep-th/0502193}{{\ttfamily
+  arXiv:hep-th/0502193 [hep-th]}}.
+
+\bibitem{Fabbri:2011kq}
+L.~Fabbri, {\em Gen. Rel. Grav.} {\bf 45}, 1285  (2013),
+  \href{http://arxiv.org/abs/1108.3046}{{\ttfamily arXiv:1108.3046 [gr-qc]}}.
+
+\bibitem{Witten:1981me}
+E.~Witten, {\em Nucl. Phys. B} {\bf 186},   412  (1981).
+
+\bibitem{Flachi:2001bj}
+A.~Flachi, I.~G. Moss and D.~J. Toms, {\em Phys. Rev. D} {\bf 64},   105029
+  (2001), \href{http://arxiv.org/abs/hep-th/0106076}{{\ttfamily
+  arXiv:hep-th/0106076 [hep-th]}}.
+
+\bibitem{GonzalezGarcia:1998ay}
+M.~C. Gonzalez-Garcia, A.~Gusso and S.~F. Novaes, {\em J. Phys. G} {\bf 24},
+  2213  (1998), \href{http://arxiv.org/abs/hep-ph/9802254}{{\ttfamily
+  arXiv:hep-ph/9802254 [hep-ph]}}.
+
+\bibitem{Kublbeck:1992mt}
+J.~Kublbeck, H.~Eck and R.~Mertig, {\em Nucl. Phys. Proc. Suppl.} {\bf 29A},
+  204  (1992).
+
+\end{thebibliography}
 
 
 \end{document}
