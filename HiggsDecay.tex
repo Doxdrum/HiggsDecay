@@ -1,4 +1,4 @@
-\documentclass{ws-mpla}
+\documentclass{iopart}
 
 \usepackage{mathtools,amsmath,amssymb,amsfonts,dsfont,mathrsfs}
 \usepackage{graphicx}
@@ -215,7 +215,7 @@
 \newcommand\CFF{Centro de F\'\i sica Fundamental,  Universidad de los Andes,\\ 5101 M\'erida, Venezuela}
 
 \usepackage{url}
-\usepackage[super]{cite}
+%\usepackage[super]{cite}
 \usepackage[%
   colorlinks=true,
   urlcolor=blue,
@@ -241,44 +241,33 @@
 %------------------
 \begin{document}
 
-\markboth{O. Castillo-Felisola, B. D\'iaz S\'aez, F. Rojas, J. Zamora-Sa\'a and A. R. Zerwekh}
-{Corrections to Higgs width decay into a fermion pair from gravitational torsion}
-
-%%%%%%%%%%%%%%%%%%%%% Publisher's Area please ignore %%%%%%%%%%%%%%
-\catchline{}{}{}{}{}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\title{CORRECTIONS TO HIGGS WIDTH DECAY INTO A FERMION PAIR FROM GRAVITATIONAL TORSION}
+\title{Corrections to higgs width decay into a fermion pair from gravitational torsion}
 
-\author{OSCAR {CASTILLO-FELISOLA},\footnote{Corresponding author} \quad BASTI\'AN {D\'IAZ S\'AEZ}, \quad  FELIPE {ROJAS}, \\ JILBERTO {ZAMORA-SA\'A} and ALFONSO R. {ZERWEKH}}
-
-\address{\UTFSM, and \\ \CCTVal. \\ o.castillo.felisola@gmail.com}
-
-\maketitle
-
-\pub{Received (Day Month Year)}{Revised (Day Month Year)}
+\author{Oscar {Castillo-Felisola},\footnote{Corresponding author} Basti\'an {D\'iaz S\'aez},  Felipe {Rojas},  Jilberto {Zamora-Sa\'a} and Alfonso R. {Zerwekh}}
+\address{\UTFSM, and \\ \CCTVal.}
+\ead{o.castillo.felisola@gmail.com}
 
 
 %--------- Abstract
 \begin{abstract}
   We consider the change of the Higgs width decay into a fermion pair  with respect to the standard model, due to the four-fermion contact interaction coming from the existence of gravitational torsion within the context of extra dimension scenarios. We found that for the partial decay \mbox{$\Gamma(H \to b \bar{b})$} the modification is approximately \num{1}\% for new physics scale $\Lambda = \SI{1}{\TeV}$, but it decreases to \num{.01}\% for $\Lambda = \SI{10}{\TeV}$. Additionally, the new interaction induces a correction to the effective gluon-gluon-Higgs, $g_{\textsc{ggh}}$. The correction to $g_{\textsc{ggh}}$ is of order \num{10}\% for $\Lambda = \SI{1}{\TeV}$ and \num{.1}\% for $\Lambda = \SI{10}{\TeV}$.
-  \keywords{Higgs Decay; Beyond Standard Model; Torsion; Generalised Gravity.}
 \end{abstract}
-
-\ccode{PACS Nos.: 04.50.Kd,04.90.+e,12.60.-i}
-
-
+\keywords{Higgs Decay; Beyond Standard Model; Torsion; Generalised Gravity.}
+\pacs{04.50.Kd, 04.90.+e, 12.60.-i}
+\submitto{\jpg}
+\maketitle
 
 \section{Introduction}\label{intro}
 
 
 The recent discovery of a bosonic resonance with mass of approximately \SI{125}{\GeV} at the LHC~\cite{Aaltonen:2012qt,Aad:2012tfa,Chatrchyan:2012ufa,Aad:2015zhl}, has open the possibility of studying in detail the electroweak symmetry breaking sector. The current data suggest that the resonance resembles the standard Higgs boson.   Since no deviation from the standard model (SM) has been already observed, it is possible that a New Physics sector may still exist at an energy scale high enough to escape direct detection at the LHC. In such a case, the presence of New Physics can be manifested, although more subtly, through corrections to the properties of the standard particles induced at loop level. For instance, it is expected that  precision measurements of the properties of the Higgs boson at a Higgs factory (for example, the planned International Linear Collider or ILC) could shed light on the nature of an eventual nonstandard sector.
 
-One of the best motivated extensions of the SM is the possible existence of more than three spatial dimensions. In these scenarios, it is tempting to consider in the bulk an extended gravitational sector. Indeed, due to the lack of a mechanism for quantizing the theory, it seems that Einstein's theory of gravity, known as General Relativity (GR), is a low energy effective theory of a more fundamental one.\footnote{There exist several attempts of quantize the gravitational interactions, see for example Refs.~\refcite{DeWitt:1967yk,DeWitt:1967ub,DeWitt:1967uc,'tHooft:1973us,'tHooft:1974bx,Deser:1974cy,Deser:1974cz,Ashtekar:1986yd,Ashtekar:1987gu,Ashtekar:2004eh} (for a historical review see Ref.~\refcite{Rovelli:2000aw}).} In an effort to obtain a more fundamental theory of gravity, several generalizations of GR have been proposed. From these theories, the minimal generalization was proposed by Cartan~\cite{Cartan1922,Cartan1923,Cartan1924,Cartan1925,Cartan-Einstein}, and it is known as Einstein--Cartan theory of gravity (ECT). The main difference between GR and ECT is that the latter does not assume the gravitational connection to be the one of Levi-Civita, and therefore there is an extra component of the connection known as (gravitational) torsion. It is worth to mention that in this minimal frame, the gravitational torsion turns to be a non-dynamical field and can be integrated out from the system.\footnote{Interestingly, for pure gravity the equation of motion for the extra fields implies a vanishing torsion.}
+One of the best motivated extensions of the SM is the possible existence of more than three spatial dimensions. In these scenarios, it is tempting to consider in the bulk an extended gravitational sector. Indeed, due to the lack of a mechanism for quantizing the theory, it seems that Einstein's theory of gravity, known as General Relativity (GR), is a low energy effective theory of a more fundamental one.\footnote{There exist several attempts of quantize the gravitational interactions, see for example Refs.~\cite{DeWitt:1967yk,DeWitt:1967ub,DeWitt:1967uc,'tHooft:1973us,'tHooft:1974bx,Deser:1974cy,Deser:1974cz,Ashtekar:1986yd,Ashtekar:1987gu,Ashtekar:2004eh} (for a historical review see Ref.~\cite{Rovelli:2000aw}).} In an effort to obtain a more fundamental theory of gravity, several generalizations of GR have been proposed. From these theories, the minimal generalization was proposed by Cartan~\cite{Cartan1922,Cartan1923,Cartan1924,Cartan1925,Cartan-Einstein}, and it is known as Einstein--Cartan theory of gravity (ECT). The main difference between GR and ECT is that the latter does not assume the gravitational connection to be the one of Levi-Civita, and therefore there is an extra component of the connection known as (gravitational) torsion. It is worth to mention that in this minimal frame, the gravitational torsion turns to be a non-dynamical field and can be integrated out from the system.\footnote{Interestingly, for pure gravity the equation of motion for the extra fields implies a vanishing torsion.}
 
 When the ECT of gravity is coupled with fermionic matter, torsion can still be integrated out, and its integration induces a four-fermion contact interaction~\cite{Kibble:1961ba,Hehl:1976kj,Shapiro:2001rz,Hammond:2002rm,SUGRA-book}. In four dimensions the effective four-fermion interaction term has a coupling constant proportional to Newton's gravitational constant, $G_N\sim M_{\text{pl}}^{-2}$, which heavily suppresses the possible phenomenology coming from this term.
-%%\footnote{%As remarked in Ref.~\refcite{Fabbri:2011kq},
+%%\footnote{%As remarked in Ref.~\cite{Fabbri:2011kq},
 %% It has to be remarked that non-minimal torsional generalisation of Einstein gravity can be built up by adding quadratic terms in the torsion field, and whose effective four-fermion interaction term has a coupling constant unrelated to the Newton's gravitational constant.\cite{Belyaev:1997zv,Belyaev:1998ax,Belyaev:2007fn,Fabbri:2011kq}
 However, in the last decades scenarios with extra dimensions have been proposed as a way to achieve naturalness between the electroweak and the (fundamental) gravitational scales, $M_*$, while the known Planck's mass, $M_{\text{pl}}$, is an enhanced effective gravitational scale~\cite{ADD1,AADD,ADD2,RS1,RS2}. These scenarios are a natural playground to test effects in particle physics induced by the existence of gravitational torsion.
 
@@ -295,7 +284,7 @@ The standard formalism used in the GR, where the physical field is the metric, i
 \begin{equation}
   \df[\vif{a}] + \spif{a}{b} \we \vif{b} = \Tf{a} \quad \text{and} \quad \df[\spif{ab}{}] + \spif{a}{c} \we \spif{cb}{} = \Rif{ab}{}.
 \end{equation}
-We shall use the notation in Refs.~\refcite{Castillo-Felisola:2013jva,Castillo-Felisola:2014iia,Castillo-Felisola:2014xba}, where hatted quantities refer to higher dimensional objects and/or indices, and $\ga^{*}$ is the four-dimensional chiral matrix.
+We shall use the notation in Refs.~\cite{Castillo-Felisola:2013jva,Castillo-Felisola:2014iia,Castillo-Felisola:2014xba}, where hatted quantities refer to higher dimensional objects and/or indices, and $\ga^{*}$ is the four-dimensional chiral matrix.
 
 We start from the $D$-dimensional action which includes the ECT of gravity and Dirac fields interacting with the gravitational field,\footnote{We assume that fermion masses are developed through the Higgs mechanism, so the is no need for considering nontrivial fundamental mass terms.}
 \begin{equation}
@@ -343,13 +332,13 @@ Therefore, the interaction in Eq.~\eqref{Lag4FI} give rise to axial--axial and t
 
 The above result corresponds to the minimal torsionful theory of gravity coupled to fermions. However, non-minimal torsional generalisations of Einstein gravity can be built up. In these cases one still obtains four-fermion interactions, whose coupling constants are not necessarily related to the Newton's gravitational constant.\cite{Belyaev:1997zv,Belyaev:1998ax,Belyaev:2007fn,Fabbri:2011kq}
 
-It is worth to highlight the fact that the decomposition shown in Eqs.~\eqref{Cliff-decomp} and~\eqref{Eff4fi} is general. However, as proved by Witten in the context of Kaluza--Klein supergravity  program~\cite{Witten:1981me}, generic compactifications on smooth manifolds lead to non-chiral fermions in the effective theory. Therefore, orbifold singularities (or fixed points) are needed to bypass this phenomenological inconsistency. In the particular case of a single extra dimension, such as the Randall--Sundrum scenarios~\cite{RS1,RS2}, the orbifold is given by the $S^1 / \mathbb{Z}_2$ structure of the extra dimension. Thus, an extra ``symmetry'' condition is induced on the effective theory, prohibiting some of the contributions of the Clifford algebra decomposition. As argued in Ref.~\refcite{Flachi:2001bj,Lebedev:2002dp}, the orbifold structure of Randall--Sundrum scenarios forbids the tensor-axial--tensor-axial interactions.
+It is worth to highlight the fact that the decomposition shown in Eqs.~\eqref{Cliff-decomp} and~\eqref{Eff4fi} is general. However, as proved by Witten in the context of Kaluza--Klein supergravity  program~\cite{Witten:1981me}, generic compactifications on smooth manifolds lead to non-chiral fermions in the effective theory. Therefore, orbifold singularities (or fixed points) are needed to bypass this phenomenological inconsistency. In the particular case of a single extra dimension, such as the Randall--Sundrum scenarios~\cite{RS1,RS2}, the orbifold is given by the $S^1 / \mathbb{Z}_2$ structure of the extra dimension. Thus, an extra ``symmetry'' condition is induced on the effective theory, prohibiting some of the contributions of the Clifford algebra decomposition. As argued in Ref.~\cite{Flachi:2001bj,Lebedev:2002dp}, the orbifold structure of Randall--Sundrum scenarios forbids the tensor-axial--tensor-axial interactions.
 
 %%However, in more general scenarios, the necessity of orbifold fixed points drops. For example, by doubling the number of fermions in the bulk ---so, the left and right chirality come from different bulk fermions---~\cite{}, or in models with more than one extra dimensions~\cite{ADD1,ADD2} in which the effective four-dimensional theory is chiral
 
 \section{One-loop calculation of $H \to \ell \bar{\ell}$}\label{1loop}
 
-In this section we shall consider the contribution of the effective four-fermion interaction in Eq.~\eqref{Eff4fi}, to the decay of the Higgs boson into a lepton pair, which is a one-loop process. To this end, we split the effective interaction into a current--current interaction (inspired by Ref.~\refcite{GonzalezGarcia:1998ay})
+In this section we shall consider the contribution of the effective four-fermion interaction in Eq.~\eqref{Eff4fi}, to the decay of the Higgs boson into a lepton pair, which is a one-loop process. To this end, we split the effective interaction into a current--current interaction (inspired by Ref.~\cite{GonzalezGarcia:1998ay})
 \begin{equation}
   \Lag_{\text{eff}} = \frac{3 \kappa_*^2}{16} \big( J_{a}^* \big) \big( J^{a*} \big) + \frac{3 \kappa_*^2}{32} \big( J_{ab}^* \big) \big( J^{ab*} \big),
   \label{new4fi}
@@ -420,7 +409,7 @@ From Fig.~\ref{fig:Hdt}, it is clear that the variation on the Higgs width decay
 
 The torsion-induced four-fermion interaction also modifies the coupling of the Higgs boson to the top quark. This is phenomenologically important because it induces a correction to the effective gluon-gluon-Higgs, $g_{\textsc{ggh}}$, which yields the main production channel of the Higgs boson at accelerators. The normalised variation of the effective coupling is given by the variation of the scalar form factor in Eq.~\eqref{Sform}, i.e.~$\delta g_{\textsc{ggh}} / g_{\textsc{ggh}} = \delta S$. For the top quark $\delta S > 0$, thus the Higgs production through gluon fusion gets enhanced. When evaluated numerically, we found that the correction to $g_{\textsc{ggh}}$ is of order \num{10}\% for $\Lambda = \SI{1}{\TeV}$ and \num{.1}\% for $\Lambda = \SI{10}{\TeV}$.
 
-Additionally, recent analysis on the constraints imposed by the torsion induced four-fermion interaction on the $Z$ boson decay in the particular case of a Randall--Sundrum scenario (see Refs.~\refcite{Lebedev:2002dp,Castillo-Felisola:2014xba}), the strongest limit is $\Lambda \simeq \SI{30}{\TeV}$. Given this stringent limit, the correction to the width decay of the Higgs drops to \num[exponent-product = \cdot]{5e-3}\% and \num[exponent-product = \cdot]{2e-4}\% for bottom and tau pairs respectively. Such limits are unlike to be measure in current or near future experiments. Nevertheless, these severe constraints are specifically for Randall--Sundrum scenarios. However, future Higgs factories, such as the International Linear Collider (ILC) or the Compact Linear Collider (CLIC), could provide a deeper insight of the core process because the electron-positron annihilation is clearer, due to the reduction of the background.
+Additionally, recent analysis on the constraints imposed by the torsion induced four-fermion interaction on the $Z$ boson decay in the particular case of a Randall--Sundrum scenario (see Refs.~\cite{Lebedev:2002dp,Castillo-Felisola:2014xba}), the strongest limit is $\Lambda \simeq \SI{30}{\TeV}$. Given this stringent limit, the correction to the width decay of the Higgs drops to \num[exponent-product = \cdot]{5e-3}\% and \num[exponent-product = \cdot]{2e-4}\% for bottom and tau pairs respectively. Such limits are unlike to be measure in current or near future experiments. Nevertheless, these severe constraints are specifically for Randall--Sundrum scenarios. However, future Higgs factories, such as the International Linear Collider (ILC) or the Compact Linear Collider (CLIC), could provide a deeper insight of the core process because the electron-positron annihilation is clearer, due to the reduction of the background.
 
 
 
@@ -431,238 +420,8 @@ B. D.~S. thanks to the Universidad Austral de Chile for the hospitality during t
 This work was partially supported by USM grant No. 11.15.77, CONICYT (Chile) under project No. 79140040 and FONDECYT (Chile) projects No. 1120346 and FSM-1204.
 
 
-%% \bibliographystyle{ws-mpla}
-%% \bibliography{References.bib}
-\begin{thebibliography}{10}
-
-\bibitem{Aaltonen:2012qt}
-CDF and D0 Collaborations, T.~Aaltonen {\em et~al.}, {\em Phys. Rev. Lett.}
-  {\bf 109},   071804  (2012), \href{http://arxiv.org/abs/1207.6436}{{\ttfamily
-  arXiv:1207.6436 [hep-ex]}}.
-
-\bibitem{Aad:2012tfa}
-ATLAS Collaboration, G.~Aad {\em et~al.}, {\em Phys. Lett. B} {\bf 716},  ~1
-  (2012), \href{http://arxiv.org/abs/1207.7214}{{\ttfamily arXiv:1207.7214
-  [hep-ex]}}.
-
-\bibitem{Chatrchyan:2012ufa}
-CMS Collaboration, S.~Chatrchyan {\em et~al.}, {\em Phys. Lett. B} {\bf 716},
-  ~30  (2012), \href{http://arxiv.org/abs/1207.7235}{{\ttfamily arXiv:1207.7235
-  [hep-ex]}}.
-
-\bibitem{Aad:2015zhl}
-ATLAS and CMS Collaborations, G.~Aad {\em et~al.}, {\em Phys. Rev. Lett.} {\bf
-  114},   191803  (2015), \href{http://arxiv.org/abs/1503.07589}{{\ttfamily
-  arXiv:1503.07589 [hep-ex]}}.
-
-\bibitem{DeWitt:1967yk}
-B.~S. DeWitt, {\em Phys. Rev.} {\bf 160},   1113  (1967).
-
-\bibitem{DeWitt:1967ub}
-B.~S. DeWitt, {\em Phys. Rev.} {\bf 162},   1195  (1967).
-
-\bibitem{DeWitt:1967uc}
-B.~S. DeWitt, {\em Phys. Rev.} {\bf 162},   1239  (1967).
-
-\bibitem{'tHooft:1973us}
-G.~'t~Hooft, {\em Nucl. Phys. B} {\bf 62},   444  (1973).
-
-\bibitem{'tHooft:1974bx}
-G.~'t~Hooft and M.~J.~G. Veltman, {\em Annales Poincare Phys. Theor. A} {\bf
-  20},  ~69  (1974).
-
-\bibitem{Deser:1974cy}
-S.~Deser and P.~van Nieuwenhuizen, {\em Phys. Rev. D} {\bf 10},   411  (1974).
-
-\bibitem{Deser:1974cz}
-S.~Deser and P.~van Nieuwenhuizen, {\em Phys. Rev. D} {\bf 10},   401  (1974).
-
-\bibitem{Ashtekar:1986yd}
-A.~Ashtekar, {\em Phys. Rev. Lett.} {\bf 57}, 2244  (1986).
-
-\bibitem{Ashtekar:1987gu}
-A.~Ashtekar, {\em Phys. Rev. D} {\bf 36},   1587  (1987).
-
-\bibitem{Ashtekar:2004eh}
-A.~Ashtekar and J.~Lewandowski, {\em Class. Quant. Grav.} {\bf 21},   R53
-  (2004), \href{http://arxiv.org/abs/gr-qc/0404018}{{\ttfamily
-  arXiv:gr-qc/0404018 [gr-qc]}}.
-
-\bibitem{Rovelli:2000aw}
-C.~Rovelli  (2000), \href{http://arxiv.org/abs/gr-qc/0006061}{{\ttfamily
-  arXiv:gr-qc/0006061 [gr-qc]}}.
-
-\bibitem{Cartan1922}
-E.~Cartan, {\em C. R. Acad. Sci. Paris} {\bf 174},   593  (1922).
-
-\bibitem{Cartan1923}
-E.~Cartan, {\em Ann. Ec. Norm. Super.} {\bf 40},   325  (1923).
-
-\bibitem{Cartan1924}
-E.~Cartan, {\em Ann. Ec. Norm. Super.} {\bf 41},  ~1  (1924).
-
-\bibitem{Cartan1925}
-E.~Cartan, {\em Ann. Ec. Norm. Super.} {\bf 42},  ~17  (1925).
-
-\bibitem{Cartan-Einstein}
-R.~Debever (ed.), {\em Elie Cartan - Albert Einstein Letters on Absolute
-  Parallelism 1929-1932} (Princeton University Press, 1979).
-
-\bibitem{Kibble:1961ba}
-T.~W.~B. Kibble, {\em J. Math. Phys.} {\bf 2}, 212  (1961).
-
-\bibitem{Hehl:1976kj}
-F.~W. Hehl, P.~von~der Heyde, G.~D. Kerlick and J.~M. Nester, {\em Rev. Mod.
-  Phys.} {\bf 48},   393  (1976).
-
-\bibitem{Shapiro:2001rz}
-I.~L. Shapiro, {\em Phys. Rep.} {\bf 357},   113  (2002),
-  \href{http://arxiv.org/abs/hep-th/0103093}{{\ttfamily arXiv:hep-th/0103093
-  [hep-th]}}.
-
-\bibitem{Hammond:2002rm}
-R.~T. Hammond, {\em Rept. Prog. Phys.} {\bf 65},   599  (2002).
-
-\bibitem{SUGRA-book}
-D.~Z. Freedman and A.~van Proyen, {\em Supergravity} (CUP, 2012).
-
-\bibitem{ADD1}
-N.~Arkani-Hamed, S.~Dimopoulos and G.~R. Dvali, {\em Phys. Lett. B} {\bf 429},
-  263  (1998), \href{http://arxiv.org/abs/hep-ph/9803315}{{\ttfamily
-  arXiv:hep-ph/9803315}}.
-
-\bibitem{AADD}
-I.~Antoniadis, N.~Arkani-Hamed, S.~Dimopoulos and G.~R. Dvali, {\em Phys. Lett.
-  B} {\bf 436},   257  (1998),
-  \href{http://arxiv.org/abs/hep-ph/9804398}{{\ttfamily arXiv:hep-ph/9804398}}.
-
-\bibitem{ADD2}
-N.~Arkani-Hamed, S.~Dimopoulos and G.~R. Dvali, {\em Phys. Rev. D} {\bf 59},
-  086004  (1999), \href{http://arxiv.org/abs/hep-ph/9807344}{{\ttfamily
-  arXiv:hep-ph/9807344}}.
-
-\bibitem{RS1}
-L.~Randall and R.~Sundrum, {\em Phys. Rev. Lett.} {\bf 83},   3370  (1999),
-  \href{http://arxiv.org/abs/hep-ph/9905221}{{\ttfamily arXiv:hep-ph/9905221}}.
-
-\bibitem{RS2}
-L.~Randall and R.~Sundrum, {\em Phys. Rev. Lett.} {\bf 83},   4690  (1999),
-  \href{http://arxiv.org/abs/hep-th/9906064}{{\ttfamily arXiv:hep-th/9906064}}.
-
-\bibitem{Belyaev:1997zv}
-A.~S. Belyaev and I.~L. Shapiro, {\em Phys. Lett. B} {\bf 425},   246  (1998),
-  \href{http://arxiv.org/abs/hep-ph/9712503}{{\ttfamily arXiv:hep-ph/9712503
-  [hep-ph]}}.
-
-\bibitem{Belyaev:1998ax}
-A.~S. Belyaev and I.~L. Shapiro, {\em Nucl. Phys. B} {\bf 543},  ~20  (1999),
-  \href{http://arxiv.org/abs/hep-ph/9806313}{{\ttfamily arXiv:hep-ph/9806313
-  [hep-ph]}}.
-
-\bibitem{Belyaev:2007fn}
-A.~S. Belyaev, I.~L. Shapiro and M.~A.~B. do~Vale, {\em Phys. Rev. D} {\bf 75},
-    034014  (2007), \href{http://arxiv.org/abs/hep-ph/0701002}{{\ttfamily
-  arXiv:hep-ph/0701002 [hep-ph]}}.
-
-\bibitem{Castillo-Felisola:2013jva}
-O.~Castillo-Felisola, C.~Corral, C.~Villavicencio and A.~R. Zerwekh, {\em Phys.
-  Rev. D} {\bf 88},   124022  (2013),
-  \href{http://arxiv.org/abs/1310.4124}{{\ttfamily arXiv:1310.4124 [hep-ph]}}.
-
-\bibitem{Puetzfeld:2004yg}
-D.~Puetzfeld, {\em New Astron. Rev.} {\bf 49},  ~59  (2005),
-  \href{http://arxiv.org/abs/gr-qc/0404119}{{\ttfamily arXiv:gr-qc/0404119
-  [gr-qc]}}.
-
-\bibitem{Capozziello:2009mq}
-S.~Capozziello and S.~Vignolo, {\em Annalen Phys.} {\bf 19}, 238  (2010),
-  \href{http://arxiv.org/abs/0910.5230}{{\ttfamily arXiv:0910.5230 [gr-qc]}}.
-
-\bibitem{Poplawski:2010jv}
-N.~J. Pop{\l}awski, {\em Ann. Phys.} {\bf 523},   291  (2011),
-  \href{http://arxiv.org/abs/1005.0893}{{\ttfamily arXiv:1005.0893 [gr-qc]}}.
-
-\bibitem{Poplawski:2010kb}
-N.~J. Pop{\l}awski, {\em Phys. Lett. B} {\bf 694},   181  (2010),
-  \href{http://arxiv.org/abs/1007.0587}{{\ttfamily arXiv:1007.0587
-  [astro-ph.CO]}}.
-
-\bibitem{Poplawski:2011xf}
-N.~J. Pop{\l}awski, {\em Phys. Rev. D} {\bf 83},   084033  (2011),
-  \href{http://arxiv.org/abs/1101.4012}{{\ttfamily arXiv:1101.4012 [gr-qc]}}.
-
-\bibitem{Poplawski:2011wj}
-N.~J. Pop{\l}awski, {\em Gen. Rel. Grav.} {\bf 44}, 491  (2012),
-  \href{http://arxiv.org/abs/1102.5667}{{\ttfamily arXiv:1102.5667 [gr-qc]}}.
-
-\bibitem{Fabbri:2012yg}
-L.~Fabbri and S.~Vignolo, {\em Int. J. Theor. Phys.} {\bf 51}, 3186  (2012),
-  \href{http://arxiv.org/abs/1201.5498}{{\ttfamily arXiv:1201.5498 [gr-qc]}}.
-
-\bibitem{Vignolo:2014wva}
-S.~Vignolo, S.~Carloni and L.~Fabbri, {\em Phys. Rev. D} {\bf 91},   043528
-  (2015), \href{http://arxiv.org/abs/1412.4674}{{\ttfamily arXiv:1412.4674
-  [gr-qc]}}.
-
-\bibitem{Capozziello:2013dja}
-S.~Capozziello, L.~Fabbri and S.~Vignolo, {\em Mod. Phys. Lett. A} {\bf 28},
-  1350155  (2013), \href{http://arxiv.org/abs/1309.3856}{{\ttfamily
-  arXiv:1309.3856 [gr-qc]}}.
-
-\bibitem{Chang:2000yw}
-L.~N. Chang, O.~Lebedev, W.~Loinaz and T.~Takeuchi, {\em Phys. Rev. Lett.} {\bf
-  85},   3765  (2000), \href{http://arxiv.org/abs/hep-ph/0005236}{{\ttfamily
-  arXiv:hep-ph/0005236 [hep-ph]}}.
-
-\bibitem{Lebedev:2002dp}
-O.~Lebedev, {\em Phys. Rev. D} {\bf 65},   124008  (2002),
-  \href{http://arxiv.org/abs/hep-ph/0201125}{{\ttfamily arXiv:hep-ph/0201125
-  [hep-ph]}}.
-
-\bibitem{CCSZ}
-O.~Castillo-Felisola, C.~Corral, I.~Schmidt and A.~R. Zerwekh  (2012),
-  \href{http://arxiv.org/abs/1211.4359}{{\ttfamily arXiv:1211.4359 [hep-ph]}}.
-
-\bibitem{Castillo-Felisola:2014iia}
-O.~Castillo-Felisola, C.~Corral, I.~Schmidt and A.~R. Zerwekh, {\em Mod. Phys.
-  Lett. A} {\bf 29},   1450081  (2014),
-  \href{http://arxiv.org/abs/1404.5195}{{\ttfamily arXiv:1404.5195 [hep-ph]}}.
-
-\bibitem{Castillo-Felisola:2014xba}
-O.~Castillo-Felisola, C.~Corral, S.~Kovalenko and I.~Schmidt, {\em Phys. Rev.
-  D} {\bf 90},   024005  (2014),
-  \href{http://arxiv.org/abs/1405.0397}{{\ttfamily arXiv:1405.0397 [hep-ph]}}.
-
-\bibitem{Cartan-calc}
-E.~Cartan, {\em Les syst{\'e}mes diff{\'e}rentiels ext{\'e}rieurs et leurs
-  applications g{\'e}om{\'e}triques} (Paris, Hermann, 1945).
-
-\bibitem{Zanelli:2005sa}
-J.~Zanelli  (2005), \href{http://arxiv.org/abs/hep-th/0502193}{{\ttfamily
-  arXiv:hep-th/0502193 [hep-th]}}.
-
-\bibitem{Fabbri:2011kq}
-L.~Fabbri, {\em Gen. Rel. Grav.} {\bf 45}, 1285  (2013),
-  \href{http://arxiv.org/abs/1108.3046}{{\ttfamily arXiv:1108.3046 [gr-qc]}}.
-
-\bibitem{Witten:1981me}
-E.~Witten, {\em Nucl. Phys. B} {\bf 186},   412  (1981).
-
-\bibitem{Flachi:2001bj}
-A.~Flachi, I.~G. Moss and D.~J. Toms, {\em Phys. Rev. D} {\bf 64},   105029
-  (2001), \href{http://arxiv.org/abs/hep-th/0106076}{{\ttfamily
-  arXiv:hep-th/0106076 [hep-th]}}.
-
-\bibitem{GonzalezGarcia:1998ay}
-M.~C. Gonzalez-Garcia, A.~Gusso and S.~F. Novaes, {\em J. Phys. G} {\bf 24},
-  2213  (1998), \href{http://arxiv.org/abs/hep-ph/9802254}{{\ttfamily
-  arXiv:hep-ph/9802254 [hep-ph]}}.
-
-\bibitem{Kublbeck:1992mt}
-J.~Kublbeck, H.~Eck and R.~Mertig, {\em Nucl. Phys. Proc. Suppl.} {\bf 29A},
-  204  (1992).
-
-\end{thebibliography}
+\bibliographystyle{iopart-num}
+\bibliography{References.bib}
 
 
 \end{document}
